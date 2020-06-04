@@ -8,10 +8,9 @@ namespace PrimitiveTribe1_0.ClassFolder
 {
 	class Hunter : Human
 	{
-		public Hunter(string new_gender, int new_currHumanIndex)
+		public Hunter(Human human) : base(human.GetCurrIndex, human.GetGender)
 		{
-			_gender = new_gender;
-			_currHumanIndex = new_currHumanIndex;
+
 		}
 	}
 }

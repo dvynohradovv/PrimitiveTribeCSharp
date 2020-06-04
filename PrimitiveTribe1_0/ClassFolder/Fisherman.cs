@@ -9,10 +9,9 @@ namespace PrimitiveTribe1_0.ClassFolder
 {
 	class Fisherman : Human
 	{
-		public Fisherman(string new_gender, int new_currHumanIndex)
+		public Fisherman(Human human) : base (human.GetCurrIndex, human.GetGender)
 		{
-			_gender = new_gender;
-			_currHumanIndex = new_currHumanIndex;
+
 		}
 	}
 }
