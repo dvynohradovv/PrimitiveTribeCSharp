@@ -28,19 +28,19 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Lazy person");
-			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Warior");
-			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Hunter");
-			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Looter");
-			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Lumberjack");
-			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Fisherman");
-			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Human", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13});
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Lazy person");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Warior");
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Hunter");
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Looter");
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Lumberjack");
+			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Fisherman");
+			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Human", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6});
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.RefreshInfoTree = new System.Windows.Forms.Button();
 			this.InfoTree = new System.Windows.Forms.TreeView();
@@ -102,23 +102,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.InfoTree.Location = new System.Drawing.Point(12, 126);
 			this.InfoTree.Name = "InfoTree";
-			treeNode8.Name = "NoClass";
-			treeNode8.Text = "Lazy person";
-			treeNode9.Name = "Warior";
-			treeNode9.Text = "Warior";
-			treeNode10.Name = "Hunter";
-			treeNode10.Text = "Hunter";
-			treeNode11.Name = "Looter";
-			treeNode11.Text = "Looter";
-			treeNode12.Name = "Lumberjack";
-			treeNode12.Text = "Lumberjack";
-			treeNode13.Name = "Fisherman";
-			treeNode13.Text = "Fisherman";
-			treeNode14.Name = "Human";
-			treeNode14.Tag = "";
-			treeNode14.Text = "Human";
+			treeNode1.Name = "NoClass";
+			treeNode1.Text = "Lazy person";
+			treeNode2.Name = "Warior";
+			treeNode2.Text = "Warior";
+			treeNode3.Name = "Hunter";
+			treeNode3.Text = "Hunter";
+			treeNode4.Name = "Looter";
+			treeNode4.Text = "Looter";
+			treeNode5.Name = "Lumberjack";
+			treeNode5.Text = "Lumberjack";
+			treeNode6.Name = "Fisherman";
+			treeNode6.Text = "Fisherman";
+			treeNode7.Name = "Human";
+			treeNode7.Tag = "";
+			treeNode7.Text = "Human";
 			this.InfoTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode14});
+            treeNode7});
 			this.InfoTree.Size = new System.Drawing.Size(264, 326);
 			this.InfoTree.TabIndex = 3;
 			// 

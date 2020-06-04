@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 
 //Варіант 26. Створення ієрархії класів на тему «Первісне плем'я»
@@ -25,76 +26,78 @@ namespace PrimitiveTribe1_0
 
 			TreeNode treeNode = new TreeNode("Menu");
 		}
-
 		private Dictionary<int, Human> dic_Human = new Dictionary<int, Human>();
 		private string _selectedGender_ = "man";
 		private Dictionary<int, NoClassHuman> dic_NoClassHuman = new Dictionary<int, NoClassHuman>();
 		private int _selectedIndex_ = 0;
 		private string _selectedClass_ = "Warior";
-
 		private void GenderListBox_SelectedIndexChanged(object sender, EventArgs e)//Селектор "выбор гендора"
 		{
 			_selectedGender_ = GenderListBox.SelectedItem.ToString();
 		}
-
 		private void MakeNewHumanButton_Click(object sender, EventArgs e)//Кнопка "новый человек"
 		{
-			dic_NoClassHuman.Add(NoClassHuman.GetIndex(), new NoClassHuman(_selectedGender_));
+			dic_NoClassHuman.Add(NoClassHuman.GetNewIndex(), new NoClassHuman(_selectedGender_));
 			MessageBox.Show("You created one: " + _selectedGender_);
 		}
-
 		private void HumanIndexNumericUpDown_ValueChanged(object sender, EventArgs e)//Селектор "выбор индекса"
 		{
 			_selectedIndex_ = Convert.ToInt32(HumanIndexNumericUpDown.Value);
 		}
-
 		private void ClassListBox_SelectedIndexChanged(object sender, EventArgs e)//Селектор "выбор класса"
 		{
 			_selectedClass_ = ClassListBox.SelectedItem.ToString();
 		}
-
 		private void AppointButton_Click(object sender, EventArgs e)//Кнопка "назначить на должность"
 		{
 			if (dic_NoClassHuman.ContainsKey(_selectedIndex_))
 			{
 				string tmp_gender = dic_NoClassHuman[_selectedIndex_].GetGender();
-				switch (_selectedClass_)
+				DialogResult result = MessageBox.Show("You appoint a human with index: " + _selectedIndex_ + " ,and with gender: " + tmp_gender + " ,to class: " + _selectedClass_, "Are you shure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+				if (result == DialogResult.Yes)
 				{
-				case "Warrior":
+					switch (_selectedClass_)
+					{
+						case "Warrior":
+							{
+								dic_Human.Add(_selectedIndex_, new Warrior(tmp_gender, _selectedIndex_));
+								break;
+							}
+						case "Hunter":
+							{
+								dic_Human.Add(_selectedIndex_, new Hunter(tmp_gender, _selectedIndex_));
+								break;
+							}
+						case "Collector":
+							{
+								dic_Human.Add(_selectedIndex_, new Collector(tmp_gender, _selectedIndex_));
+								break;
+							}
+						case "Lumberjack":
+							{
+								dic_Human.Add(_selectedIndex_, new Lumberjack(tmp_gender, _selectedIndex_));
+								break;
+							}
+						case "Fisherman":
+							{
+								dic_Human.Add(_selectedIndex_, new Fisherman(tmp_gender, _selectedIndex_));
+								break;
+							}
+						default: break;
+					}
+					dic_NoClassHuman.Remove(_selectedIndex_);
+				}
+				else
 				{
-					dic_Human.Add(_selectedIndex_, new Warrior(tmp_gender, _selectedIndex_));
-					break;
+					MessageBox.Show("You didnt make a human");
+					//MySound.ERROR.Play();
 				}
-				case "Hunter":
-				{
-					dic_Human.Add(_selectedIndex_, new Hunter(tmp_gender, _selectedIndex_));
-					break;
-				}
-				case "Collector":
-				{
-					dic_Human.Add(_selectedIndex_, new Collector(tmp_gender, _selectedIndex_));
-					break;
-				}
-				case "Lumberjack":
-				{
-					dic_Human.Add(_selectedIndex_, new Lumberjack(tmp_gender, _selectedIndex_));
-					break;
-				}
-				case "Fisherman":
-				{
-					dic_Human.Add(_selectedIndex_, new Fisherman(tmp_gender, _selectedIndex_));
-					break;
-				}
-				default: break;
-				}
-				MessageBox.Show("You appoint a human with index: " + _selectedIndex_ + " ,and with gender: " + tmp_gender + " ,to class: " + _selectedClass_);
-				dic_NoClassHuman.Remove(_selectedIndex_);
 			}
 			else
 			{
+				//MySound.ERROR.Play();
 				MessageBox.Show("There is no human with index: " + _selectedIndex_);
 			}
-			
 		}
 	}
 }

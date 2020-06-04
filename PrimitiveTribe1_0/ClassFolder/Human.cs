@@ -16,19 +16,19 @@ namespace PrimitiveTribe1_0.ClassFolder
 		//	_currHumanIndex = new_currHumanIndex;
 		//}
 		protected string _gender;
+		protected static int _humansIndex = 0;
 		protected int _currHumanIndex = 0;
 	}
 
-	class NoClassHuman
+	class NoClassHuman : Human
 	{
 		public NoClassHuman(string new_gender)
 		{
 			_gender = new_gender;
-			_humanIndex++;
+			_currHumanIndex = _humansIndex;
+			_humansIndex++;
 		}
 		public string GetGender() { return _gender; }
-		static public int GetIndex() { return _humanIndex; }
-		private string _gender;
-		static private int _humanIndex = 0;
+		static public int GetNewIndex() { return _humansIndex; }
 	}
 }
