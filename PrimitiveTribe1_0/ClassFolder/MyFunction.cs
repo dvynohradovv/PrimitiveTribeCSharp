@@ -8,7 +8,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 {
 	static class MyFunction
 	{
-		public static Random rnd = new Random();
+		private static Random rnd = new Random();
 		public static int RandomValue()
 		{
 			return rnd.Next();
@@ -20,6 +20,15 @@ namespace PrimitiveTribe1_0.ClassFolder
 		public static int RandomValue(int from, int to)
 		{
 			return rnd.Next(from, to + 1);
+		}
+		public static int RandomValue(int from, int to, int repeat)
+		{
+			int[] Values = new int[repeat];
+			for(int i = 0; i < repeat; i++)
+			{
+				Values[i] = MyFunction.RandomValue(from, to);
+			}
+			return Values.Max();
 		}
 		public static string RandomValue(List<string> str_list)
 		{

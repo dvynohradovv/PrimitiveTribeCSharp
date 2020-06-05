@@ -54,6 +54,7 @@
     <Compile Include="ClassFolder\Lumberjack.cs" />
     <Compile Include="ClassFolder\MyFunction.cs" />
     <Compile Include="ClassFolder\MySound.cs" />
+    <Compile Include="ClassFolder\Resources.cs" />
     <Compile Include="ClassFolder\Tribe.cs" />
     <Compile Include="ClassFolder\Warrior.cs" />
     <Compile Include="Form1.cs">
@@ -76,6 +77,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Properties\DataSources\Form1.datasource" />
     <None Include="Properties\DataSources\PrimitiveTribe1_0.ClassFolder.Collector.datasource" />
     <None Include="Properties\DataSources\PrimitiveTribe1_0.ClassFolder.Human.datasource" />

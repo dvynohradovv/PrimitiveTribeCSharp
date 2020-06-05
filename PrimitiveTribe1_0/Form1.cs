@@ -39,7 +39,7 @@ namespace PrimitiveTribe1_0
 		private void MakeNewHumanButton_Click_1(object sender, EventArgs e)//Кнопка "новый человек"
 		{
 			tribe.MakeNoClassHuman(_selectedGender_);
-			MessageBox.Show("You make a: " + _selectedGender_); 
+			MessageBox.Show("You make a: " + _selectedGender_);
 		}
 		private void HumanIndexNumericUpDown_ValueChanged(object sender, EventArgs e)//Селектор "выбор индекса"
 		{

@@ -9,7 +9,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 {
 	class Fisherman : Human
 	{
-		public Fisherman(Human human) : base (human.GetCurrIndex, human.GetGender)
+		public Fisherman(Human human) : base (human.GetCurrIndex, human.GetGender, human.GetHumanCharacteristics)
 		{
 
 		}

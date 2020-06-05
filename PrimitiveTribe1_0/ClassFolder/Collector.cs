@@ -8,7 +8,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 {
 	class Collector:Human
 	{
-		public Collector(Human human) : base(human.GetCurrIndex, human.GetGender)
+		public Collector(Human human) : base(human.GetCurrIndex, human.GetGender, human.GetHumanCharacteristics)
 		{
 
 		}

@@ -6,11 +6,25 @@ using System.Threading.Tasks;
 
 namespace PrimitiveTribe1_0.ClassFolder
 {
-	class Lumberjack : Human
+	abstract class Resources
 	{
-		public Lumberjack(Human human) : base(human.GetCurrIndex, human.GetGender, human.GetHumanCharacteristics)
-		{
 
-		}
+	}
+
+	class Food: Resources
+	{
+
+	}
+	class Wood : Resources
+	{
+
+	}
+	class Stone : Resources
+	{
+
+	}
+	class AnimalSkins : Resources
+	{
+
 	}
 }

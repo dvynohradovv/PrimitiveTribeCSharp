@@ -8,7 +8,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 {
 	class Warrior : Human
 	{
-		public Warrior(Human human) : base(human.GetCurrIndex, human.GetGender)
+		public Warrior(Human human) : base(human.GetCurrIndex, human.GetGender, human.GetHumanCharacteristics)
 		{
 
 		}

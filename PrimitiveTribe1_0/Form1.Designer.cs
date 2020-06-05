@@ -28,25 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Lazy person");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Warrior");
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Hunter");
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Looter");
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Lumberjack");
-			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Fisherman");
-			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Human", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6});
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.RefreshInfoTree = new System.Windows.Forms.Button();
-			this.InfoTree = new System.Windows.Forms.TreeView();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.ClassComboBox = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.HumanIndexNumericUpDown = new System.Windows.Forms.NumericUpDown();
 			this.AppointButton = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.GenderComboBox = new System.Windows.Forms.ComboBox();
@@ -58,21 +46,20 @@
 			this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutMyTribeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.HumanIndexNumericUpDown = new System.Windows.Forms.NumericUpDown();
-			this.ClassComboBox = new System.Windows.Forms.ComboBox();
+			this.InfoListView = new System.Windows.Forms.ListView();
 			this.panel1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.HumanIndexNumericUpDown)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.HumanIndexNumericUpDown)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+			this.panel1.Controls.Add(this.InfoListView);
 			this.panel1.Controls.Add(this.RefreshInfoTree);
-			this.panel1.Controls.Add(this.InfoTree);
 			this.panel1.Controls.Add(this.groupBox2);
 			this.panel1.Controls.Add(this.groupBox1);
 			this.panel1.Controls.Add(this.button1);
@@ -95,33 +82,6 @@
 			this.RefreshInfoTree.Text = "Refresh InfoList";
 			this.RefreshInfoTree.UseVisualStyleBackColor = true;
 			// 
-			// InfoTree
-			// 
-			this.InfoTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.InfoTree.Location = new System.Drawing.Point(12, 126);
-			this.InfoTree.Name = "InfoTree";
-			treeNode1.Name = "NoClass";
-			treeNode1.Text = "Lazy person";
-			treeNode2.Name = "Warrior";
-			treeNode2.Text = "Warrior";
-			treeNode3.Name = "Hunter";
-			treeNode3.Text = "Hunter";
-			treeNode4.Name = "Looter";
-			treeNode4.Text = "Looter";
-			treeNode5.Name = "Lumberjack";
-			treeNode5.Text = "Lumberjack";
-			treeNode6.Name = "Fisherman";
-			treeNode6.Text = "Fisherman";
-			treeNode7.Name = "Human";
-			treeNode7.Tag = "";
-			treeNode7.Text = "Human";
-			this.InfoTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7});
-			this.InfoTree.Size = new System.Drawing.Size(264, 326);
-			this.InfoTree.TabIndex = 3;
-			// 
 			// groupBox2
 			// 
 			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -141,6 +101,22 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Appoint as";
 			// 
+			// ClassComboBox
+			// 
+			this.ClassComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.ClassComboBox.FormattingEnabled = true;
+			this.ClassComboBox.Items.AddRange(new object[] {
+            "Warrior",
+            "Hunter",
+            "Collector",
+            "Lumberjack",
+            "Fisherman"});
+			this.ClassComboBox.Location = new System.Drawing.Point(6, 64);
+			this.ClassComboBox.Name = "ClassComboBox";
+			this.ClassComboBox.Size = new System.Drawing.Size(187, 33);
+			this.ClassComboBox.TabIndex = 2;
+			this.ClassComboBox.SelectedIndexChanged += new System.EventHandler(this.ClassComboBox_SelectedIndexChanged);
+			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
@@ -158,6 +134,14 @@
 			this.label1.Size = new System.Drawing.Size(124, 25);
 			this.label1.TabIndex = 4;
 			this.label1.Text = "human index";
+			// 
+			// HumanIndexNumericUpDown
+			// 
+			this.HumanIndexNumericUpDown.Location = new System.Drawing.Point(6, 29);
+			this.HumanIndexNumericUpDown.Name = "HumanIndexNumericUpDown";
+			this.HumanIndexNumericUpDown.Size = new System.Drawing.Size(120, 30);
+			this.HumanIndexNumericUpDown.TabIndex = 3;
+			this.HumanIndexNumericUpDown.ValueChanged += new System.EventHandler(this.HumanIndexNumericUpDown_ValueChanged);
 			// 
 			// AppointButton
 			// 
@@ -281,29 +265,17 @@
 			this.aboutMyTribeToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
 			this.aboutMyTribeToolStripMenuItem.Text = "About MyTribe";
 			// 
-			// HumanIndexNumericUpDown
+			// InfoListView
 			// 
-			this.HumanIndexNumericUpDown.Location = new System.Drawing.Point(6, 29);
-			this.HumanIndexNumericUpDown.Name = "HumanIndexNumericUpDown";
-			this.HumanIndexNumericUpDown.Size = new System.Drawing.Size(120, 30);
-			this.HumanIndexNumericUpDown.TabIndex = 3;
-			this.HumanIndexNumericUpDown.ValueChanged += new System.EventHandler(this.HumanIndexNumericUpDown_ValueChanged);
-			// 
-			// ClassComboBox
-			// 
-			this.ClassComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.ClassComboBox.FormattingEnabled = true;
-			this.ClassComboBox.Items.AddRange(new object[] {
-            "Warrior",
-            "Hunter",
-            "Collector",
-            "Lumberjack",
-            "Fisherman"});
-			this.ClassComboBox.Location = new System.Drawing.Point(6, 64);
-			this.ClassComboBox.Name = "ClassComboBox";
-			this.ClassComboBox.Size = new System.Drawing.Size(187, 33);
-			this.ClassComboBox.TabIndex = 2;
-			this.ClassComboBox.SelectedIndexChanged += new System.EventHandler(this.ClassComboBox_SelectedIndexChanged);
+			this.InfoListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.InfoListView.HideSelection = false;
+			this.InfoListView.Location = new System.Drawing.Point(12, 126);
+			this.InfoListView.Name = "InfoListView";
+			this.InfoListView.Size = new System.Drawing.Size(264, 326);
+			this.InfoListView.TabIndex = 2;
+			this.InfoListView.UseCompatibleStateImageBehavior = false;
 			// 
 			// Form1
 			// 
@@ -321,13 +293,13 @@
 			this.panel1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.HumanIndexNumericUpDown)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.HumanIndexNumericUpDown)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -348,11 +320,11 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TreeView InfoTree;
 		private System.Windows.Forms.Button RefreshInfoTree;
 		private System.Windows.Forms.ComboBox GenderComboBox;
 		private System.Windows.Forms.NumericUpDown HumanIndexNumericUpDown;
 		private System.Windows.Forms.ComboBox ClassComboBox;
+		private System.Windows.Forms.ListView InfoListView;
 	}
 }
 
