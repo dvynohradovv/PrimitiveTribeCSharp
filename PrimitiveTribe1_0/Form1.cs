@@ -18,8 +18,12 @@ using System.Media;
 
 namespace PrimitiveTribe1_0
 {
+	public enum JobsEnum { NoClassHuman, Leader, Shaman, Fisherman, Collector, Lumberjack, Warrior, Hunter };
+	public enum CharacteristicsEnum { Strength, Agility, Intelligence, Luck };
+	public enum ResourceEnum { Food, Wood, Stone, AnimalSkin, TribalStrength, TribalPrestige, Medicines };
 	public partial class Form1 : Form
 	{
+		
 		public Form1()
 		{
 			InitializeComponent();
@@ -31,7 +35,8 @@ namespace PrimitiveTribe1_0
 
 		private string _selectedGender_ = "man";
 		private int _selectedIndex_ = 0;
-		private string _selectedClass_ = "Warrior";
+		private string _selectedJobStr_ = "Leader";
+		private JobsEnum selectedJob = JobsEnum.Leader;
 		private void GenderComboBox_SelectedIndexChanged(object sender, EventArgs e)//Селектор "выбор гендора"
 		{
 			_selectedGender_ = GenderComboBox.SelectedItem.ToString();
@@ -47,23 +52,31 @@ namespace PrimitiveTribe1_0
 		}
 		private void ClassComboBox_SelectedIndexChanged(object sender, EventArgs e)// Селектор "выбор класса"
 		{
-			_selectedClass_ = ClassComboBox.SelectedItem.ToString();
+			_selectedJobStr_ = ClassComboBox.SelectedItem.ToString();
+			selectedJob = MyFunction.ParseToJobsEnum(_selectedJobStr_);
 		}
 		private void AppointButton_Click(object sender, EventArgs e)//Кнопка "назначить на должность"
 		{
-			if (tribe.HasHuman(_selectedIndex_)) 
+			if (tribe.HasHuman(_selectedIndex_))
 			{
-				DialogResult result = MessageBox.Show(
-					"You appoint a human with index: '" + _selectedIndex_ + "' and with gender: '" + tribe.GetGender(_selectedIndex_) + "' to class: " + _selectedClass_, 
-					"Are you shure?", 
-					MessageBoxButtons.YesNo, 
-					MessageBoxIcon.Question, 
-					MessageBoxDefaultButton.Button1, 
-					MessageBoxOptions.ServiceNotification);
-
-				if (result == DialogResult.Yes) 
+				if((selectedJob == JobsEnum.Leader || selectedJob == JobsEnum.Shaman) && tribe.HasSomeClass(selectedJob))
 				{
-					tribe.AppointTo(_selectedIndex_, _selectedClass_);
+					MessageBox.Show("You can't select more then one: " + _selectedJobStr_);
+				}
+				else
+				{
+					DialogResult result = MessageBox.Show(
+						"You appoint a human with index: '" + _selectedIndex_ + "' and with gender: '" + tribe.GetGender(_selectedIndex_) + "' to class: " + _selectedJobStr_,
+						"Are you shure?",
+						MessageBoxButtons.YesNo,
+						MessageBoxIcon.Question,
+						MessageBoxDefaultButton.Button1,
+						MessageBoxOptions.ServiceNotification);
+					if (result == DialogResult.Yes)
+					{
+						tribe.AppointTo(_selectedIndex_, selectedJob);
+						MessageBox.Show("Creating was successful");
+					}
 				}
 			}
 			else 
@@ -72,7 +85,9 @@ namespace PrimitiveTribe1_0
 				MessageBox.Show("There is no human with index: " + _selectedIndex_);
 			}
 		}
-
-		
+		private void button1_Click(object sender, EventArgs e)
+		{
+			tribe.GoToWork();
+		}
 	}
 }

@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.InfoListView = new System.Windows.Forms.ListView();
 			this.RefreshInfoTree = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.ClassComboBox = new System.Windows.Forms.ComboBox();
@@ -46,7 +47,6 @@
 			this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutMyTribeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.InfoListView = new System.Windows.Forms.ListView();
 			this.panel1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.HumanIndexNumericUpDown)).BeginInit();
@@ -68,6 +68,18 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(284, 721);
 			this.panel1.TabIndex = 0;
+			// 
+			// InfoListView
+			// 
+			this.InfoListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.InfoListView.HideSelection = false;
+			this.InfoListView.Location = new System.Drawing.Point(12, 126);
+			this.InfoListView.Name = "InfoListView";
+			this.InfoListView.Size = new System.Drawing.Size(264, 326);
+			this.InfoListView.TabIndex = 2;
+			this.InfoListView.UseCompatibleStateImageBehavior = false;
 			// 
 			// RefreshInfoTree
 			// 
@@ -106,6 +118,8 @@
 			this.ClassComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.ClassComboBox.FormattingEnabled = true;
 			this.ClassComboBox.Items.AddRange(new object[] {
+            "Leader",
+            "Shaman",
             "Warrior",
             "Hunter",
             "Collector",
@@ -223,6 +237,7 @@
 			this.button1.TabIndex = 0;
 			this.button1.Text = "New Day";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// panel2
 			// 
@@ -264,18 +279,6 @@
 			this.aboutMyTribeToolStripMenuItem.Name = "aboutMyTribeToolStripMenuItem";
 			this.aboutMyTribeToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
 			this.aboutMyTribeToolStripMenuItem.Text = "About MyTribe";
-			// 
-			// InfoListView
-			// 
-			this.InfoListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.InfoListView.HideSelection = false;
-			this.InfoListView.Location = new System.Drawing.Point(12, 126);
-			this.InfoListView.Name = "InfoListView";
-			this.InfoListView.Size = new System.Drawing.Size(264, 326);
-			this.InfoListView.TabIndex = 2;
-			this.InfoListView.UseCompatibleStateImageBehavior = false;
 			// 
 			// Form1
 			// 

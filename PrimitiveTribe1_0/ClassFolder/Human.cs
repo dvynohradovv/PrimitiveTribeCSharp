@@ -1,6 +1,8 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,69 +12,61 @@ namespace PrimitiveTribe1_0.ClassFolder
 {
 	abstract class Human
 	{
+		//конструкторы
 		public Human (string gender)//Конструктор в случае создания нового человека
 		{
-			_gender = gender;
-			_characteristics = new HumanCharacteristics(gender);
+			_characteristics = new HumanCharacteristics(gender, _humansIndex);
+			_humansIndex++;
 		}
-		public Human(int index, string gender, HumanCharacteristics characteristics)//Конструктор для переопределения класса
+		public Human(HumanCharacteristics characteristics)//Конструктор для переопределения класса
 		{
-			_currHumanIndex = index;
-			_gender = gender;
 			_characteristics = characteristics;
 		}
-		public string GetGender { get => _gender; }
-		public int GetCurrIndex { get => _currHumanIndex; }
-		public HumanCharacteristics GetHumanCharacteristics { get => _characteristics; }
-		public static int GetNewIndex { get => _humansIndex; }
 
+		//геттеры и сеттеры 
+		public string Gender { get => _characteristics.Gender; } 
+		public int CurrIndex { get => _characteristics.CurrIndex; } 
+		public HumanCharacteristics Characteristics { get => _characteristics; } 
+		public HumanCharacteristics LeaderCharacteristics { get => _leaderCharacteristics; } 
+		public JobsEnum CurrJob { get => _currJob; } 
 
-		protected string _gender;
-		protected static int _humansIndex = 0;
-		protected int _currHumanIndex = 0;
-		private HumanCharacteristics _characteristics;
+		//методы взаимодействия 
+		public abstract void GoToWork(TribeResources tribeResources); 
+
+		//статические методы-поля класса
+		public static int NewIndex { get => _humansIndex; } 
+		private static int _humansIndex = 0;
+
+		//поля класса, которые меняются при переопределении класса
+		protected JobsEnum _currJob;
+		protected int _daysOnJob = 0;
+
+		//объекты класса
+		private HumanCharacteristics _characteristics = new HumanCharacteristics();
+		private HumanCharacteristics _leaderCharacteristics = Tribe.Leader == null ? new HumanCharacteristics() : Tribe.Leader.Characteristics;
+
+		//private методы
+		protected abstract int Efficiency();
+
+		/*
+		 * Я если честно, так и не понял для чего это всё. Запутался чуток, решил переписать. А.С.
+		public Tribe Tribe { get => _tribe; }
+		public Human Leader { get => Tribe == null ? null : Tribe.Leader; }
+		public HumanCharacteristics LeaderCharacteristics { get => Leader == null ? new HumanCharacteristics() : Leader.Characteristics; }
+		private Tribe _tribe = null; как мы это инициализируем??
+		*/
 	}
 	class NoClassHuman : Human
 	{
-		public NoClassHuman(string gender) : base (gender)
+		public NoClassHuman(string gender) : base (gender) 
 		{
-			_currHumanIndex = _humansIndex;
-			_humansIndex++;
+			_currJob = JobsEnum.NoClassHuman;
 		}
+		protected override int Efficiency()
+		{
+			throw new NotImplementedException();
+		}
+		public override void GoToWork(TribeResources tribeResources) { }
+		
 	}
-
-	class HumanCharacteristics
-	{
-		public HumanCharacteristics() 
-		{
-			_strength = 0;
-			_agility = 0;
-			_intelligence = 0;
-			_luck = 0;
-		}
-		public HumanCharacteristics(string gender)
-		{
-			int from = 0, to = 10;
-			_strength = MyFunction.RandomValue(to);
-			_agility = MyFunction.RandomValue(to);
-			_intelligence = MyFunction.RandomValue(to);
-			_luck = MyFunction.RandomValue(to);
-			if (gender == "man")
-			{
-				_strength = MyFunction.RandomValue(from, to, 3);
-			}
-			else if (gender == "woman")
-			{
-				_agility = MyFunction.RandomValue(from, to, 3);
-			}
-		}
-		private int _strength;
-		private int _agility;
-		private int _intelligence;
-		private int _luck;
-	}
-
-
-
-
 }
