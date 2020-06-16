@@ -35,7 +35,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 			int list_size = str_list.Count() - 1;
 			return str_list[RandomValue(list_size)];
 		}
-		public static JobsEnum ParseToJobsEnum(string currClass)
+		public static JobsEnum ParseStringToJobsEnum(string currClass)
 		{
 			switch (currClass)
 			{

@@ -27,16 +27,14 @@ namespace PrimitiveTribe1_0
 		public Form1()
 		{
 			InitializeComponent();
-
-			TreeNode treeNode = new TreeNode("Menu");
 		}
 
 		private Tribe tribe = new Tribe();
 
 		private string _selectedGender_ = "man";
-		private int _selectedIndex_ = 0;
-		private string _selectedJobStr_ = "Leader";
+		private int _selectedIndex_ = -1;
 		private JobsEnum selectedJob = JobsEnum.Leader;
+
 		private void GenderComboBox_SelectedIndexChanged(object sender, EventArgs e)//Селектор "выбор гендора"
 		{
 			_selectedGender_ = GenderComboBox.SelectedItem.ToString();
@@ -45,28 +43,64 @@ namespace PrimitiveTribe1_0
 		{
 			tribe.MakeNoClassHuman(_selectedGender_);
 			MessageBox.Show("You make a: " + _selectedGender_);
+			LoadInfoListViewData();
 		}
-		private void HumanIndexNumericUpDown_ValueChanged(object sender, EventArgs e)//Селектор "выбор индекса"
+		private void LoadInfoListViewData() //Обновление списка людей
 		{
-			_selectedIndex_ = Convert.ToInt32(HumanIndexNumericUpDown.Value);
+			InfoListView.Items.Clear();
+			foreach (var it in tribe.GetTribeListViewData())
+			{
+				ListViewItem oneItem = new ListViewItem(it);
+
+				InfoListView.Items.Add(oneItem);
+			}
+		}
+		private void LoadResourceInfoListData()
+		{
+			string[] str = tribe.GetTribeResourcesData();
+			FoodIndex.Text = str[0];
+			WoodIndex.Text = str[1];
+			StoneIndex.Text = str[2];
+			AnimalSkinIndex.Text = str[3];
+			MedicinesIndex.Text = str[4];
+		}
+		private void InfoListView_SelectedIndexChanged(object sender, EventArgs e) //выделили нового человека
+		{
+			CharacteristicsListView.Items.Clear();
+			ListViewItem oneItem;
+			if (InfoListView.SelectedItems.Count != 0)
+			{
+				_selectedIndex_ = Convert.ToInt32(InfoListView.FocusedItem.SubItems[0].Text);
+				oneItem = new ListViewItem(tribe.GetHumanCharacteristicListViewData(_selectedIndex_));
+			}
+			else
+			{
+				_selectedIndex_ = -1;
+				string[] str = { "0", "0", "0", "0", "0" };
+				oneItem = new ListViewItem(str);
+			}
+			CharacteristicsListView.Items.Add(oneItem);
+		}
+		private void InfoListView_DoubleClick(object sender, EventArgs e) //двойной щелчёк на человеке
+		{
+			
 		}
 		private void ClassComboBox_SelectedIndexChanged(object sender, EventArgs e)// Селектор "выбор класса"
 		{
-			_selectedJobStr_ = ClassComboBox.SelectedItem.ToString();
-			selectedJob = MyFunction.ParseToJobsEnum(_selectedJobStr_);
+			selectedJob = MyFunction.ParseStringToJobsEnum(ClassComboBox.SelectedItem.ToString());
 		}
 		private void AppointButton_Click(object sender, EventArgs e)//Кнопка "назначить на должность"
 		{
 			if (tribe.HasHuman(_selectedIndex_))
 			{
-				if((selectedJob == JobsEnum.Leader || selectedJob == JobsEnum.Shaman) && tribe.HasSomeClass(selectedJob))
+				if(selectedJob == JobsEnum.Leader && tribe.HasSomeClass(selectedJob))
 				{
-					MessageBox.Show("You can't select more then one: " + _selectedJobStr_);
+					MessageBox.Show("You can't select more then one: " + selectedJob.ToString());
 				}
 				else
 				{
 					DialogResult result = MessageBox.Show(
-						"You appoint a human with index: '" + _selectedIndex_ + "' and with gender: '" + tribe.GetGender(_selectedIndex_) + "' to class: " + _selectedJobStr_,
+						"You appoint a human with index: '" + _selectedIndex_ + "' and with gender: '" + tribe.GetGender(_selectedIndex_) + "' to class: " + selectedJob.ToString(),
 						"Are you shure?",
 						MessageBoxButtons.YesNo,
 						MessageBoxIcon.Question,
@@ -76,6 +110,7 @@ namespace PrimitiveTribe1_0
 					{
 						tribe.AppointTo(_selectedIndex_, selectedJob);
 						MessageBox.Show("Creating was successful");
+						LoadInfoListViewData();
 					}
 				}
 			}
@@ -85,9 +120,13 @@ namespace PrimitiveTribe1_0
 				MessageBox.Show("There is no human with index: " + _selectedIndex_);
 			}
 		}
-		private void button1_Click(object sender, EventArgs e)
+		private void newDayButton_Click(object sender, EventArgs e)//Кнопка "новый день"
 		{
 			tribe.GoToWork();
+			LoadResourceInfoListData();
+			LoadInfoListViewData();
+			MessageBox.Show("New day is starting!");
 		}
+
 	}
 }

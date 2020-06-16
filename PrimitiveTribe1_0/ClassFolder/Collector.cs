@@ -14,12 +14,13 @@ namespace PrimitiveTribe1_0.ClassFolder
 		}
 		public override void GoToWork(TribeResources tribeResources)
 		{
-			tribeResources.AddResource(new Stone(Efficiency()));
+			efficiency = Efficiency();
+			tribeResources.AddResource(new Stone(efficiency));
 			Characteristics.JobsLevelUpdate(JobsEnum.Collector, _daysOnJob);
 		}
 		protected override int Efficiency()
 		{
-			return Characteristics.CalculateEfficiency(LeaderCharacteristics, 0.3, 0.2, 0.1, 0.4);
+			return Characteristics.CalculateEfficiency(LeaderCharacteristics, JobsEnum.Collector, 0.3, 0.2, 0.1, 0.4);
 		}
 	}
 }

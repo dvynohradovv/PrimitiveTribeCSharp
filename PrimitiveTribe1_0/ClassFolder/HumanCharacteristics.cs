@@ -45,25 +45,27 @@ namespace PrimitiveTribe1_0.ClassFolder
 			int from = 0, to = 10;
 			Agility = MyFunction.RandomValue(to);
 			Luck = MyFunction.RandomValue(to);
+			fullName = new Name(gender);
 			if (gender == "man")
 			{
 				Intelligence = MyFunction.RandomValue(to);
-				Strength = MyFunction.RandomValue(from, to, 3);
+				Strength = MyFunction.RandomValue(from, to, 2);
 			}
 			else if (gender == "woman")
 			{
 				Strength = MyFunction.RandomValue(to);
-				Intelligence = MyFunction.RandomValue(from, to, 3);
+				Intelligence = MyFunction.RandomValue(from, to, 2);
 			}
 		}
 
 		//методы
-		public int CalculateEfficiency(HumanCharacteristics leader, double coefStr, double coefAg, double coefInt, double coefLuc)
+		public int CalculateEfficiency(HumanCharacteristics leader, JobsEnum job, double coefStr, double coefAg, double coefInt, double coefLuc)
 		{
 			double strength = (Strength + leader.Strength / 2) * coefStr;
 			double agility = (Agility + leader.Agility / 2) * coefAg;
 			double intelligence = (Intelligence + leader.Intelligence / 2) * coefInt;
-			double luck = (Luck + leader.Luck / 2) * coefLuc;
+			double luck = (Luck + leader.Luck / 2) * coefLuc; 
+			
 
 			return Convert.ToInt32(Math.Round(strength + agility + intelligence + luck));
 		}
@@ -131,12 +133,42 @@ namespace PrimitiveTribe1_0.ClassFolder
 		private Dictionary<CharacteristicsEnum, int> dic_HumanCharacteristics = new Dictionary<CharacteristicsEnum, int>();
 		private string _gender;
 		private int _currIndex;
+		
 		private HumanJobsExp humanJobsExp = new HumanJobsExp();
 		private HumanSpecialSkills humanSpecialSkills = new HumanSpecialSkills();
+		private Name fullName = new Name();
 
 		//геттеры-сеттеры других объектов
-		public HumanJobsExp GetHumanJobsExp { get => humanJobsExp; }
-		public HumanSpecialSkills GetHumanSpecialSkills { get => humanSpecialSkills; }
+		public HumanJobsExp HumanJobsExp { get => humanJobsExp; }
+		public HumanSpecialSkills HumanSpecialSkills { get => humanSpecialSkills; }
+		public Name Name { get => fullName; }
+	}
+	class Name
+	{
+		public Name() { }
+		public Name(string gender)
+		{
+			if(gender == "man")
+			{
+				_name = MyFunction.RandomValue(manName);
+				_nickName = MyFunction.RandomValue(manNickName);
+			}
+			else if (gender == "woman")
+			{
+				_name = MyFunction.RandomValue(womanName);
+				_nickName = MyFunction.RandomValue(womanNickName);
+			}
+			
+		}
+		public string FullName { get => _name + " " + _nickName; }
+
+		private string _name;
+		private string _nickName;
+
+		private static List<string> manName = new List<string> {"Агай", "Атой", "Астро", "Анхан", "Бедро", "Борк", "Бедго", "Варно", "Вер", "Вик", "Деми", "Дордо", "Дакар", "Жихер", "Жарко", "Жосан", "Зид", "Звун", "Имлин", "Корток", "Касти", "Кобро", "Кедо", "Леми", "Логра", "Мирт", "Мегри", "Мыкс", "Мхон", "Нага", "Нехно", "Нурн", "Одри", "Онтар", "Оги", "Ото", "Пакс", "Порто", "Пенди", "Пушту", "Ригви", "Рдана", "Регсо", "Ротк", "Сибр", "Содво", "Свен", "Скарт", "Старх", "Тетри", "Тард", "Тахин", "Тогин", "Тибр", "Уна", "Угло", "Фен", "Хогло", "Цачш", "Черк", "Чодно", "Шегри", "Шкарх", "Штуп", "Шинго", "Юдж", "Юрт", "Эг", "Этро", "Ярен", "Ярст", "Якш", "Якхи" };
+		private static List<string> womanName = new List<string> { "Ата", "Арка", "Аста", "Абри", "Айма", "Аха", "Берда", "Борка", "Бискина", "Бугла", "Бола", "Вета", "Виста", "Вежка", "Выгра", "Гидра", "Геска", "Гола", "Дика", "Даста", "Добка", "Дила", "Еая", "Жиста", "Зита", "Зуга", "Йала", "Йоста", "Килха", "Ласта", "Мирта", "Нала", "Йола", "Хаца", "Раса", "Сатра", "Порти", "Скина", "Титра", "Тера", "Тобри", "Тенгри", "Ува", "Фуца", "Фишли", "Фихта", "Хуби", "Хала", "Хоги", "Худива", "Циа", "Цоба", "Цинка", "Цибри", "Чилва", "Чова", "Чхоша", "Шури", "Шисти", "Шуври", "Эая", "Йова", "Йинки", "Эн", "Юста", "Юви", "Юэн", "Югра", "Юхни", "Яста", "Янра", "Ядуга", "Яфеста", "Яшха" };
+		private static List<string> manNickName = new List<string> { "Борец", "Великан", "Волелюб", "Высокий", "Гордый", "Грозный", "Гнойный", "Гадкий", "Дикий", "Добрый", "Дурной", "Дельный", "Жесткий", "Злой", "Красивый", "Красный", "Ленивый", "Мощный", "Монстр", "Медведь", "Низкий", "Носорог", "Огр", "Рослый", "Рёв", "Слон", "Скала", "Таурен", "Ханжа", "Храбрый", "Хороший", "Честный", "Чудной", "Широкий", "Шальной", "Юркий", "Яркий", "Бессмертный", "Каменный", "Горький" };
+		private static List<string> womanNickName = new List<string> { "Борец", "Великанша", "Волелюбная", "Высокая", "Гордая", "Грозная", "Гнойная", "Гадкая", "Дикая", "Добрая", "Дурная", "Дельная", "Жесткая", "Жестокая", "Злая", "Красивая", "Красная", "Ленивая", "Мощная", "Монстр", "Медведица", "Низкая", "Огр", "Рослая", "Рёв", "Скала", "Ханжа", "Храбрая", "Хорошая", "Честная", "Чудная", "Широкая", "Шальная", "Юркая", "Яркая", "Прекрасная", "Красивая", "Улыбчивая", "Весна", "Хилая", "Стойкая" };
 	}
 	class HumanJobsExp
 	{

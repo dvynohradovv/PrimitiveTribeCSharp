@@ -17,13 +17,14 @@ namespace PrimitiveTribe1_0.ClassFolder
 		//методы класса
 		public override void GoToWork(TribeResources tribeResources)
 		{
-			tribeResources.AddResource(new TribalPrestige(Efficiency()));
+			efficiency = Efficiency();
+			tribeResources.AddResource(new TribalPrestige(efficiency));
 			Characteristics.IncreaseSomeRandom(1, 1);
 			Characteristics.JobsLevelUpdate(JobsEnum.Leader, _daysOnJob);
 		}
 		protected override int Efficiency()
 		{
-			return Characteristics.CalculateEfficiency(LeaderCharacteristics, 0.3, 0.2, 0.4, 0.1);
+			return Characteristics.CalculateEfficiency(LeaderCharacteristics, JobsEnum.Leader, 0.3, 0.2, 0.4, 0.1);
 		}
 	}
 }

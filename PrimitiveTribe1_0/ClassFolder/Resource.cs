@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PrimitiveTribe1_0.ClassFolder
+﻿namespace PrimitiveTribe1_0.ClassFolder
 {
 	abstract class Resource
 	{
@@ -13,13 +7,13 @@ namespace PrimitiveTribe1_0.ClassFolder
 			_resourceType = resourceType;
 		}
 
-		public Resource(ResourceEnum resourceType, int add)
+		public Resource(ResourceEnum resourceType, int quantity)
 		{
 			_resourceType = resourceType;
-			_quantity = add;
+			_quantity = quantity;
 		}
-		public ResourceEnum GetResourceType() { return _resourceType; }
-		public int GetQuantity() { return _quantity; }
+		public ResourceEnum ResourceType { get => _resourceType; }
+		public int Quantity { get => _quantity; }
 		public void AddTo(int add) { _quantity += add; }
 		public bool UseFrom(int use)
 		{
@@ -38,36 +32,36 @@ namespace PrimitiveTribe1_0.ClassFolder
 	{
 		public Food() : base(ResourceEnum.Food) { } 
 
-		public Food(int add) : base(ResourceEnum.Food, add) 	{ } 
+		public Food(int quantity) : base(ResourceEnum.Food, quantity) 	{ } 
 	}
 	class Wood : Resource
 	{
 		public Wood() : base(ResourceEnum.Wood) { }
-		public Wood(int add) : base(ResourceEnum.Wood, add) { }
+		public Wood(int quantity) : base(ResourceEnum.Wood, quantity) { }
 	}
 	class Stone : Resource
 	{
 		public Stone() : base(ResourceEnum.Stone) { }
-		public Stone(int add) : base(ResourceEnum.Stone, add) { }
+		public Stone(int quantity) : base(ResourceEnum.Stone, quantity) { }
 	}
 	class AnimalSkin : Resource
 	{
 		public AnimalSkin() : base(ResourceEnum.AnimalSkin) { }
-		public AnimalSkin(int add) : base(ResourceEnum.AnimalSkin, add) { }
+		public AnimalSkin(int quantity) : base(ResourceEnum.AnimalSkin, quantity) { }
 	}
 	class TribalStrength : Resource
 	{
 		public TribalStrength() : base(ResourceEnum.TribalStrength) { }
-		public TribalStrength(int add) : base(ResourceEnum.TribalStrength, add) { }
+		public TribalStrength(int quantity) : base(ResourceEnum.TribalStrength, quantity) { }
 	}
 	class TribalPrestige : Resource
 	{
 		public TribalPrestige() : base(ResourceEnum.TribalPrestige) { }
-		public TribalPrestige(int add) : base(ResourceEnum.TribalPrestige, add) { }
+		public TribalPrestige(int quantity) : base(ResourceEnum.TribalPrestige, quantity) { }
 	}
 	class Medicines : Resource 
 	{
 		public Medicines() : base(ResourceEnum.Medicines) { }
-		public Medicines(int add) : base(ResourceEnum.Medicines, add) { }
+		public Medicines(int quantity) : base(ResourceEnum.Medicines, quantity) { }
 	}
 }

@@ -29,6 +29,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 		public HumanCharacteristics Characteristics { get => _characteristics; } 
 		public HumanCharacteristics LeaderCharacteristics { get => _leaderCharacteristics; } 
 		public JobsEnum CurrJob { get => _currJob; } 
+		public int efficiency { get => _efficiency; set => _efficiency = value; }
 
 		//методы взаимодействия 
 		public abstract void GoToWork(TribeResources tribeResources); 
@@ -40,6 +41,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 		//поля класса, которые меняются при переопределении класса
 		protected JobsEnum _currJob;
 		protected int _daysOnJob = 0;
+		private int _efficiency = 0;
 
 		//объекты класса
 		private HumanCharacteristics _characteristics = new HumanCharacteristics();
@@ -64,7 +66,8 @@ namespace PrimitiveTribe1_0.ClassFolder
 		}
 		protected override int Efficiency()
 		{
-			throw new NotImplementedException();
+			efficiency = 0;
+			return 0;
 		}
 		public override void GoToWork(TribeResources tribeResources) { }
 		

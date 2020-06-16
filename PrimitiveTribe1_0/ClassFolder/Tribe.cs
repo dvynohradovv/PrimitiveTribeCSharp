@@ -10,9 +10,49 @@ namespace PrimitiveTribe1_0.ClassFolder
 	{
 		//статические геттеры-методы
 		public static Leader Leader { get => leader; }
-		public static Shaman Shaman { get => shaman; }
 
-		//методы класса
+		//геттеры для обновления информации в винФорм
+		public List<string[]> GetTribeListViewData()
+		{
+			List<string[]> dataList = new List<string[]>(); 
+			foreach (var it in dic_Human)
+			{
+				dataList.Add (new string[] 
+				{ 
+					Convert.ToString(it.Key), 
+					it.Value.Characteristics.Name.FullName, 
+					it.Value.CurrJob.ToString(), 
+					it.Value.Gender
+				});
+			}
+			return dataList;
+		}
+		public string[] GetHumanCharacteristicListViewData(int index)
+		{
+			string[] dataStr = (new string[]
+			{
+				Convert.ToString(dic_Human[index].Characteristics.Strength),
+				Convert.ToString(dic_Human[index].Characteristics.Agility),
+				Convert.ToString(dic_Human[index].Characteristics.Intelligence),
+				Convert.ToString(dic_Human[index].Characteristics.Luck),
+				Convert.ToString(dic_Human[index].efficiency)
+			});
+			return dataStr;
+		}
+		public string[] GetTribeResourcesData()
+		{
+			string[] dataStr = (new string[]
+			{
+				Convert.ToString(tribeResources.GetResourceQuantity(ResourceEnum.Food)),
+				Convert.ToString(tribeResources.GetResourceQuantity(ResourceEnum.Wood)),
+				Convert.ToString(tribeResources.GetResourceQuantity(ResourceEnum.Stone)),
+				Convert.ToString(tribeResources.GetResourceQuantity(ResourceEnum.AnimalSkin)),
+				Convert.ToString(tribeResources.GetResourceQuantity(ResourceEnum.Medicines))
+			});
+			return dataStr;
+		}
+
+		//методы класса для взаимодействия с классом Human\dic_Human
 		public bool HasHuman(int index)
 		{
 			return dic_Human.ContainsKey(index);
@@ -42,7 +82,6 @@ namespace PrimitiveTribe1_0.ClassFolder
 			Human human = dic_Human[index];
 			dic_Human.Remove(index);
 			if (human.CurrJob == JobsEnum.Leader) leader = null;
-			if (human.CurrJob == JobsEnum.Shaman) shaman = null;
 			switch (job)
 			{
 				case JobsEnum.Warrior:
@@ -79,7 +118,6 @@ namespace PrimitiveTribe1_0.ClassFolder
 				case JobsEnum.Shaman:
 					{
 						dic_Human.Add(index, new Shaman(human));
-						shaman = (Shaman)dic_Human[index];
 						break;
 					}
 				default: break;
@@ -93,96 +131,39 @@ namespace PrimitiveTribe1_0.ClassFolder
 			}
 		}
 
+
+		//методы для взаимодействия с ресурсами племени
+		
+
 		//объекты класса
-		private Dictionary<int, Human> dic_Human = new Dictionary<int, Human>();
-		protected TribeResources tribeResources = new TribeResources();
+		private SortedDictionary<int, Human> dic_Human = new SortedDictionary<int, Human>();
+		private TribeResources tribeResources = new TribeResources();
 		private static Leader leader = null;
-		private static Shaman shaman = null;
 	}
-	class TribeResources
+	class TribeResources 
 	{
-		//конструктор по умолчанию
-		public TribeResources()
+		public Resource GetResource(ResourceEnum resourceEnum)
 		{
-			food = new Food();
-			wood = new Wood();
-			stone = new Stone();
-			animalSkin = new AnimalSkin();
-			tribalStrength = new TribalStrength();
-			tribalPrestige = new TribalPrestige();
-			medicines = new Medicines();
+			return dic_tribeResources[resourceEnum];
+		}
+		public int GetResourceQuantity(ResourceEnum resourceEnum)
+		{
+			return dic_tribeResources[resourceEnum].Quantity;
 		}
 
-		//объекты класса
-		private Food food;
-		private Wood wood;
-		private Stone stone;
-		private AnimalSkin animalSkin;
-		private TribalStrength tribalStrength;
-		private TribalPrestige tribalPrestige;
-		private Medicines medicines;
-
-		//методы-адд по ресурсам
-		private void AddFood(Food new_food)
+		private Dictionary<ResourceEnum, Resource> dic_tribeResources = new Dictionary<ResourceEnum, Resource>()
 		{
-			food.AddTo(new_food.GetQuantity());
-		}
-		private void AddWood(Wood new_wood)
-		{
-			wood.AddTo(new_wood.GetQuantity());
-		}
-		private void AddStone(Stone new_stone)
-		{
-			stone.AddTo(new_stone.GetQuantity());
-		}
-		private void AddAnimalSkin(AnimalSkin new_animalSkin)
-		{
-			animalSkin.AddTo(new_animalSkin.GetQuantity());
-		}
-		private void AddTribalStrength(TribalStrength new_tribalStrength)
-		{
-			tribalStrength.AddTo(new_tribalStrength.GetQuantity());
-		}
-		private void AddTribalPrestige(TribalPrestige new_tribalPrestige)
-		{
-			tribalPrestige.AddTo(new_tribalPrestige.GetQuantity());
-		}
-		private void AddMedicines(Medicines new_medicines)
-		{
-			medicines.AddTo(new_medicines.GetQuantity());
-		}
-
-		//методы-адд общий ресурс
+			{ ResourceEnum.Food, new Food() },
+			{ ResourceEnum.Wood, new Wood() },
+			{ ResourceEnum.Stone, new Stone() },
+			{ ResourceEnum.AnimalSkin, new AnimalSkin() },
+			{ ResourceEnum.Medicines, new Medicines() },
+			{ ResourceEnum.TribalStrength, new TribalStrength() },
+			{ ResourceEnum.TribalPrestige, new TribalPrestige() }
+		};
 		public void AddResource(Resource resource)
 		{
-			if (resource is Food)
-			{
-				AddFood((Food)resource);
-			}
-			else if (resource is Wood)
-			{
-				AddWood((Wood)resource);
-			}
-			else if (resource is Stone)
-			{
-				AddStone((Stone)resource);
-			}
-			else if (resource is AnimalSkin)
-			{
-				AddAnimalSkin((AnimalSkin)resource);
-			}
-			else if (resource is TribalStrength)
-			{
-				AddTribalStrength((TribalStrength)resource);
-			}
-			else if (resource is TribalPrestige)
-			{
-				AddTribalPrestige((TribalPrestige)resource);
-			}
-			else if (resource is Medicines)
-			{
-				AddMedicines((Medicines)resource);
-			}
+			dic_tribeResources[resource.ResourceType].AddTo(resource.Quantity);
 		}
 	}
 }

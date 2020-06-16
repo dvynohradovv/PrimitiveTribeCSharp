@@ -29,93 +29,222 @@
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.label4 = new System.Windows.Forms.Label();
+			this.CharacteristicsListView = new System.Windows.Forms.ListView();
+			this.strength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.agility = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.intelligence = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.luck = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.efficiency = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.newDayButton = new System.Windows.Forms.Button();
 			this.InfoListView = new System.Windows.Forms.ListView();
-			this.RefreshInfoTree = new System.Windows.Forms.Button();
+			this.index = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.job = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.ClassComboBox = new System.Windows.Forms.ComboBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.HumanIndexNumericUpDown = new System.Windows.Forms.NumericUpDown();
 			this.AppointButton = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.GenderComboBox = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.MakeNewHumanButton = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.aboutMyTribeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.resourceGroupBox = new System.Windows.Forms.GroupBox();
+			this.WoodIndex = new System.Windows.Forms.Label();
+			this.MedicinesIndex = new System.Windows.Forms.Label();
+			this.AnimalSkinIndex = new System.Windows.Forms.Label();
+			this.StoneIndex = new System.Windows.Forms.Label();
+			this.FoodIndex = new System.Windows.Forms.Label();
+			this.Wood = new System.Windows.Forms.Label();
+			this.Medicines = new System.Windows.Forms.Label();
+			this.AnimalSkin = new System.Windows.Forms.Label();
+			this.Stone = new System.Windows.Forms.Label();
+			this.Food = new System.Windows.Forms.Label();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.pictureBox3 = new System.Windows.Forms.PictureBox();
+			this.pictureBox4 = new System.Windows.Forms.PictureBox();
+			this.pictureBox5 = new System.Windows.Forms.PictureBox();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.HumanIndexNumericUpDown)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
-			this.menuStrip1.SuspendLayout();
+			this.resourceGroupBox.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
+			this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.panel1.Controls.Add(this.label4);
+			this.panel1.Controls.Add(this.CharacteristicsListView);
+			this.panel1.Controls.Add(this.newDayButton);
 			this.panel1.Controls.Add(this.InfoListView);
-			this.panel1.Controls.Add(this.RefreshInfoTree);
 			this.panel1.Controls.Add(this.groupBox2);
 			this.panel1.Controls.Add(this.groupBox1);
-			this.panel1.Controls.Add(this.button1);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(284, 721);
+			this.panel1.Size = new System.Drawing.Size(521, 721);
 			this.panel1.TabIndex = 0;
+			// 
+			// label4
+			// 
+			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.label4.Location = new System.Drawing.Point(5, 446);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(147, 25);
+			this.label4.TabIndex = 7;
+			this.label4.Text = "Characteristics:";
+			// 
+			// CharacteristicsListView
+			// 
+			this.CharacteristicsListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.CharacteristicsListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(115)))), ((int)(((byte)(106)))));
+			this.CharacteristicsListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.CharacteristicsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.strength,
+            this.agility,
+            this.intelligence,
+            this.luck,
+            this.efficiency});
+			this.CharacteristicsListView.Font = new System.Drawing.Font("Calibri", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.CharacteristicsListView.ForeColor = System.Drawing.Color.White;
+			this.CharacteristicsListView.HideSelection = false;
+			this.CharacteristicsListView.Location = new System.Drawing.Point(4, 474);
+			this.CharacteristicsListView.MultiSelect = false;
+			this.CharacteristicsListView.Name = "CharacteristicsListView";
+			this.CharacteristicsListView.Size = new System.Drawing.Size(511, 65);
+			this.CharacteristicsListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
+			this.CharacteristicsListView.TabIndex = 1;
+			this.CharacteristicsListView.UseCompatibleStateImageBehavior = false;
+			this.CharacteristicsListView.View = System.Windows.Forms.View.Details;
+			// 
+			// strength
+			// 
+			this.strength.Text = "strength";
+			this.strength.Width = 75;
+			// 
+			// agility
+			// 
+			this.agility.Text = "agility";
+			// 
+			// intelligence
+			// 
+			this.intelligence.Text = "intelligence";
+			this.intelligence.Width = 100;
+			// 
+			// luck
+			// 
+			this.luck.Text = "luck";
+			this.luck.Width = 55;
+			// 
+			// efficiency
+			// 
+			this.efficiency.Text = "efficiency";
+			this.efficiency.Width = 90;
+			// 
+			// newDayButton
+			// 
+			this.newDayButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.newDayButton.AutoSize = true;
+			this.newDayButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(139)))), ((int)(((byte)(175)))));
+			this.newDayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.newDayButton.FlatAppearance.BorderSize = 0;
+			this.newDayButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.newDayButton.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.newDayButton.ForeColor = System.Drawing.Color.White;
+			this.newDayButton.Location = new System.Drawing.Point(266, 670);
+			this.newDayButton.Name = "newDayButton";
+			this.newDayButton.Size = new System.Drawing.Size(249, 39);
+			this.newDayButton.TabIndex = 0;
+			this.newDayButton.Text = "New Day";
+			this.newDayButton.UseVisualStyleBackColor = false;
+			this.newDayButton.Click += new System.EventHandler(this.newDayButton_Click);
 			// 
 			// InfoListView
 			// 
 			this.InfoListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.InfoListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(115)))), ((int)(((byte)(106)))));
+			this.InfoListView.BackgroundImageTiled = true;
+			this.InfoListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.InfoListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.index,
+            this.name,
+            this.job,
+            this.gender});
+			this.InfoListView.Font = new System.Drawing.Font("Calibri", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.InfoListView.ForeColor = System.Drawing.Color.White;
+			this.InfoListView.FullRowSelect = true;
 			this.InfoListView.HideSelection = false;
-			this.InfoListView.Location = new System.Drawing.Point(12, 126);
+			this.InfoListView.Location = new System.Drawing.Point(4, 117);
+			this.InfoListView.MultiSelect = false;
 			this.InfoListView.Name = "InfoListView";
-			this.InfoListView.Size = new System.Drawing.Size(264, 326);
+			this.InfoListView.Size = new System.Drawing.Size(511, 326);
 			this.InfoListView.TabIndex = 2;
+			this.InfoListView.TileSize = new System.Drawing.Size(1, 1);
 			this.InfoListView.UseCompatibleStateImageBehavior = false;
+			this.InfoListView.View = System.Windows.Forms.View.Details;
+			this.InfoListView.SelectedIndexChanged += new System.EventHandler(this.InfoListView_SelectedIndexChanged);
+			this.InfoListView.DoubleClick += new System.EventHandler(this.InfoListView_DoubleClick);
 			// 
-			// RefreshInfoTree
+			// index
 			// 
-			this.RefreshInfoTree.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.RefreshInfoTree.AutoSize = true;
-			this.RefreshInfoTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.RefreshInfoTree.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.RefreshInfoTree.Location = new System.Drawing.Point(116, 458);
-			this.RefreshInfoTree.Name = "RefreshInfoTree";
-			this.RefreshInfoTree.Size = new System.Drawing.Size(160, 35);
-			this.RefreshInfoTree.TabIndex = 4;
-			this.RefreshInfoTree.Text = "Refresh InfoList";
-			this.RefreshInfoTree.UseVisualStyleBackColor = true;
+			this.index.Text = "index";
+			this.index.Width = 31;
+			// 
+			// name
+			// 
+			this.name.Text = "name";
+			this.name.Width = 121;
+			// 
+			// job
+			// 
+			this.job.Text = "job";
+			this.job.Width = 168;
+			// 
+			// gender
+			// 
+			this.gender.Text = "gender";
+			this.gender.Width = 57;
 			// 
 			// groupBox2
 			// 
-			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.groupBox2.Controls.Add(this.ClassComboBox);
-			this.groupBox2.Controls.Add(this.label2);
-			this.groupBox2.Controls.Add(this.label1);
-			this.groupBox2.Controls.Add(this.HumanIndexNumericUpDown);
 			this.groupBox2.Controls.Add(this.AppointButton);
 			this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.groupBox2.Location = new System.Drawing.Point(12, 499);
+			this.groupBox2.Location = new System.Drawing.Point(318, 3);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.groupBox2.Size = new System.Drawing.Size(264, 141);
+			this.groupBox2.Size = new System.Drawing.Size(197, 108);
 			this.groupBox2.TabIndex = 2;
 			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Appoint as";
+			this.groupBox2.Text = "Class";
 			// 
 			// ClassComboBox
 			// 
+			this.ClassComboBox.BackColor = System.Drawing.Color.Gainsboro;
+			this.ClassComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.ClassComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.ClassComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.ClassComboBox.ForeColor = System.Drawing.Color.Black;
 			this.ClassComboBox.FormattingEnabled = true;
 			this.ClassComboBox.Items.AddRange(new object[] {
             "Leader",
@@ -125,72 +254,56 @@
             "Collector",
             "Lumberjack",
             "Fisherman"});
-			this.ClassComboBox.Location = new System.Drawing.Point(6, 64);
+			this.ClassComboBox.Location = new System.Drawing.Point(4, 29);
 			this.ClassComboBox.Name = "ClassComboBox";
 			this.ClassComboBox.Size = new System.Drawing.Size(187, 33);
 			this.ClassComboBox.TabIndex = 2;
 			this.ClassComboBox.SelectedIndexChanged += new System.EventHandler(this.ClassComboBox_SelectedIndexChanged);
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(199, 64);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(57, 25);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "class";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(132, 31);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(124, 25);
-			this.label1.TabIndex = 4;
-			this.label1.Text = "human index";
-			// 
-			// HumanIndexNumericUpDown
-			// 
-			this.HumanIndexNumericUpDown.Location = new System.Drawing.Point(6, 29);
-			this.HumanIndexNumericUpDown.Name = "HumanIndexNumericUpDown";
-			this.HumanIndexNumericUpDown.Size = new System.Drawing.Size(120, 30);
-			this.HumanIndexNumericUpDown.TabIndex = 3;
-			this.HumanIndexNumericUpDown.ValueChanged += new System.EventHandler(this.HumanIndexNumericUpDown_ValueChanged);
 			// 
 			// AppointButton
 			// 
 			this.AppointButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.AppointButton.AutoSize = true;
-			this.AppointButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.AppointButton.Location = new System.Drawing.Point(4, 99);
+			this.AppointButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(139)))), ((int)(((byte)(175)))));
+			this.AppointButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.AppointButton.FlatAppearance.BorderSize = 0;
+			this.AppointButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.AppointButton.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.AppointButton.ForeColor = System.Drawing.Color.White;
+			this.AppointButton.Location = new System.Drawing.Point(82, 68);
 			this.AppointButton.Name = "AppointButton";
-			this.AppointButton.Size = new System.Drawing.Size(252, 35);
+			this.AppointButton.Size = new System.Drawing.Size(109, 34);
 			this.AppointButton.TabIndex = 1;
 			this.AppointButton.Text = "Appoint";
-			this.AppointButton.UseVisualStyleBackColor = true;
+			this.AppointButton.UseVisualStyleBackColor = false;
 			this.AppointButton.Click += new System.EventHandler(this.AppointButton_Click);
 			// 
 			// groupBox1
 			// 
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.groupBox1.Controls.Add(this.GenderComboBox);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.MakeNewHumanButton);
 			this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.groupBox1.Location = new System.Drawing.Point(12, 12);
+			this.groupBox1.Location = new System.Drawing.Point(4, 3);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.groupBox1.Size = new System.Drawing.Size(264, 108);
+			this.groupBox1.Size = new System.Drawing.Size(185, 108);
 			this.groupBox1.TabIndex = 1;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Make New Human";
 			// 
 			// GenderComboBox
 			// 
+			this.GenderComboBox.BackColor = System.Drawing.Color.Gainsboro;
+			this.GenderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.GenderComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.GenderComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.GenderComboBox.ForeColor = System.Drawing.Color.Black;
 			this.GenderComboBox.FormattingEnabled = true;
 			this.GenderComboBox.Items.AddRange(new object[] {
             "man",
@@ -198,16 +311,17 @@
             "random"});
 			this.GenderComboBox.Location = new System.Drawing.Point(6, 29);
 			this.GenderComboBox.Name = "GenderComboBox";
-			this.GenderComboBox.Size = new System.Drawing.Size(173, 33);
+			this.GenderComboBox.Size = new System.Drawing.Size(100, 33);
 			this.GenderComboBox.TabIndex = 1;
 			this.GenderComboBox.SelectedIndexChanged += new System.EventHandler(this.GenderComboBox_SelectedIndexChanged);
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(185, 26);
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label3.Location = new System.Drawing.Point(112, 29);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(73, 25);
+			this.label3.Size = new System.Drawing.Size(60, 20);
 			this.label3.TabIndex = 6;
 			this.label3.Text = "gender";
 			// 
@@ -216,79 +330,235 @@
 			this.MakeNewHumanButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.MakeNewHumanButton.AutoSize = true;
-			this.MakeNewHumanButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.MakeNewHumanButton.Location = new System.Drawing.Point(6, 64);
+			this.MakeNewHumanButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(139)))), ((int)(((byte)(175)))));
+			this.MakeNewHumanButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.MakeNewHumanButton.FlatAppearance.BorderSize = 0;
+			this.MakeNewHumanButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.MakeNewHumanButton.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.MakeNewHumanButton.ForeColor = System.Drawing.Color.White;
+			this.MakeNewHumanButton.Location = new System.Drawing.Point(4, 68);
 			this.MakeNewHumanButton.Name = "MakeNewHumanButton";
-			this.MakeNewHumanButton.Size = new System.Drawing.Size(252, 35);
+			this.MakeNewHumanButton.Size = new System.Drawing.Size(175, 34);
 			this.MakeNewHumanButton.TabIndex = 1;
 			this.MakeNewHumanButton.Text = "Make New Human";
-			this.MakeNewHumanButton.UseVisualStyleBackColor = true;
+			this.MakeNewHumanButton.UseVisualStyleBackColor = false;
 			this.MakeNewHumanButton.Click += new System.EventHandler(this.MakeNewHumanButton_Click_1);
-			// 
-			// button1
-			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.AutoSize = true;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button1.Location = new System.Drawing.Point(12, 674);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(264, 35);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "New Day";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// panel2
 			// 
+			this.panel2.AllowDrop = true;
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-			this.panel2.Controls.Add(this.menuStrip1);
+			this.panel2.Controls.Add(this.resourceGroupBox);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel2.Location = new System.Drawing.Point(284, 0);
+			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1064, 721);
+			this.panel2.Size = new System.Drawing.Size(1348, 721);
 			this.panel2.TabIndex = 1;
 			// 
-			// menuStrip1
+			// resourceGroupBox
 			// 
-			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem,
-            this.fAQToolStripMenuItem,
-            this.aboutMyTribeToolStripMenuItem});
-			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(1064, 28);
-			this.menuStrip1.TabIndex = 0;
-			this.menuStrip1.Text = "menuStrip1";
+			this.resourceGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.resourceGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(139)))), ((int)(((byte)(175)))));
+			this.resourceGroupBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.resourceGroupBox.Controls.Add(this.pictureBox2);
+			this.resourceGroupBox.Controls.Add(this.pictureBox3);
+			this.resourceGroupBox.Controls.Add(this.pictureBox4);
+			this.resourceGroupBox.Controls.Add(this.pictureBox5);
+			this.resourceGroupBox.Controls.Add(this.WoodIndex);
+			this.resourceGroupBox.Controls.Add(this.MedicinesIndex);
+			this.resourceGroupBox.Controls.Add(this.pictureBox1);
+			this.resourceGroupBox.Controls.Add(this.AnimalSkinIndex);
+			this.resourceGroupBox.Controls.Add(this.StoneIndex);
+			this.resourceGroupBox.Controls.Add(this.FoodIndex);
+			this.resourceGroupBox.Controls.Add(this.Wood);
+			this.resourceGroupBox.Controls.Add(this.Medicines);
+			this.resourceGroupBox.Controls.Add(this.AnimalSkin);
+			this.resourceGroupBox.Controls.Add(this.Stone);
+			this.resourceGroupBox.Controls.Add(this.Food);
+			this.resourceGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.resourceGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.resourceGroupBox.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.resourceGroupBox.Location = new System.Drawing.Point(1080, 0);
+			this.resourceGroupBox.Name = "resourceGroupBox";
+			this.resourceGroupBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.resourceGroupBox.Size = new System.Drawing.Size(268, 257);
+			this.resourceGroupBox.TabIndex = 3;
+			this.resourceGroupBox.TabStop = false;
+			this.resourceGroupBox.Text = "Resource";
 			// 
-			// menuToolStripMenuItem
+			// WoodIndex
 			// 
-			this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-			this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
-			this.menuToolStripMenuItem.Text = "Menu";
+			this.WoodIndex.AutoSize = true;
+			this.WoodIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.WoodIndex.Location = new System.Drawing.Point(191, 85);
+			this.WoodIndex.Name = "WoodIndex";
+			this.WoodIndex.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.WoodIndex.Size = new System.Drawing.Size(18, 20);
+			this.WoodIndex.TabIndex = 9;
+			this.WoodIndex.Text = "0";
 			// 
-			// fAQToolStripMenuItem
+			// MedicinesIndex
 			// 
-			this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
-			this.fAQToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
-			this.fAQToolStripMenuItem.Text = "FAQ";
+			this.MedicinesIndex.AutoSize = true;
+			this.MedicinesIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.MedicinesIndex.Location = new System.Drawing.Point(191, 218);
+			this.MedicinesIndex.Name = "MedicinesIndex";
+			this.MedicinesIndex.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.MedicinesIndex.Size = new System.Drawing.Size(18, 20);
+			this.MedicinesIndex.TabIndex = 8;
+			this.MedicinesIndex.Text = "0";
 			// 
-			// aboutMyTribeToolStripMenuItem
+			// AnimalSkinIndex
 			// 
-			this.aboutMyTribeToolStripMenuItem.Name = "aboutMyTribeToolStripMenuItem";
-			this.aboutMyTribeToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
-			this.aboutMyTribeToolStripMenuItem.Text = "About MyTribe";
+			this.AnimalSkinIndex.AutoSize = true;
+			this.AnimalSkinIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.AnimalSkinIndex.Location = new System.Drawing.Point(191, 174);
+			this.AnimalSkinIndex.Name = "AnimalSkinIndex";
+			this.AnimalSkinIndex.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.AnimalSkinIndex.Size = new System.Drawing.Size(18, 20);
+			this.AnimalSkinIndex.TabIndex = 7;
+			this.AnimalSkinIndex.Text = "0";
+			// 
+			// StoneIndex
+			// 
+			this.StoneIndex.AutoSize = true;
+			this.StoneIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.StoneIndex.Location = new System.Drawing.Point(191, 128);
+			this.StoneIndex.Name = "StoneIndex";
+			this.StoneIndex.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.StoneIndex.Size = new System.Drawing.Size(18, 20);
+			this.StoneIndex.TabIndex = 6;
+			this.StoneIndex.Text = "0";
+			// 
+			// FoodIndex
+			// 
+			this.FoodIndex.AutoSize = true;
+			this.FoodIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.FoodIndex.Location = new System.Drawing.Point(190, 40);
+			this.FoodIndex.Name = "FoodIndex";
+			this.FoodIndex.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.FoodIndex.Size = new System.Drawing.Size(18, 20);
+			this.FoodIndex.TabIndex = 5;
+			this.FoodIndex.Text = "0";
+			// 
+			// Wood
+			// 
+			this.Wood.AutoSize = true;
+			this.Wood.Location = new System.Drawing.Point(65, 81);
+			this.Wood.Name = "Wood";
+			this.Wood.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.Wood.Size = new System.Drawing.Size(71, 25);
+			this.Wood.TabIndex = 4;
+			this.Wood.Text = "Wood:";
+			// 
+			// Medicines
+			// 
+			this.Medicines.AutoSize = true;
+			this.Medicines.Location = new System.Drawing.Point(61, 214);
+			this.Medicines.Name = "Medicines";
+			this.Medicines.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.Medicines.Size = new System.Drawing.Size(107, 25);
+			this.Medicines.TabIndex = 3;
+			this.Medicines.Text = "Medicines:";
+			// 
+			// AnimalSkin
+			// 
+			this.AnimalSkin.AutoSize = true;
+			this.AnimalSkin.Location = new System.Drawing.Point(61, 170);
+			this.AnimalSkin.Name = "AnimalSkin";
+			this.AnimalSkin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.AnimalSkin.Size = new System.Drawing.Size(122, 25);
+			this.AnimalSkin.TabIndex = 2;
+			this.AnimalSkin.Text = "Animal Skin:";
+			// 
+			// Stone
+			// 
+			this.Stone.AutoSize = true;
+			this.Stone.Location = new System.Drawing.Point(65, 124);
+			this.Stone.Name = "Stone";
+			this.Stone.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.Stone.Size = new System.Drawing.Size(70, 25);
+			this.Stone.TabIndex = 1;
+			this.Stone.Text = "Stone:";
+			// 
+			// Food
+			// 
+			this.Food.AutoSize = true;
+			this.Food.Location = new System.Drawing.Point(64, 36);
+			this.Food.Name = "Food";
+			this.Food.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.Food.Size = new System.Drawing.Size(63, 25);
+			this.Food.TabIndex = 0;
+			this.Food.Text = "Food:";
+			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.ErrorImage = null;
+			this.pictureBox2.Image = global::PrimitiveTribe1_0.Properties.Resources.wood;
+			this.pictureBox2.InitialImage = null;
+			this.pictureBox2.Location = new System.Drawing.Point(21, 71);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox2.TabIndex = 5;
+			this.pictureBox2.TabStop = false;
+			// 
+			// pictureBox3
+			// 
+			this.pictureBox3.ErrorImage = null;
+			this.pictureBox3.Image = global::PrimitiveTribe1_0.Properties.Resources.medicines;
+			this.pictureBox3.InitialImage = null;
+			this.pictureBox3.Location = new System.Drawing.Point(21, 208);
+			this.pictureBox3.Name = "pictureBox3";
+			this.pictureBox3.Size = new System.Drawing.Size(40, 40);
+			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox3.TabIndex = 6;
+			this.pictureBox3.TabStop = false;
+			// 
+			// pictureBox4
+			// 
+			this.pictureBox4.ErrorImage = null;
+			this.pictureBox4.Image = global::PrimitiveTribe1_0.Properties.Resources.food;
+			this.pictureBox4.InitialImage = null;
+			this.pictureBox4.Location = new System.Drawing.Point(21, 25);
+			this.pictureBox4.Name = "pictureBox4";
+			this.pictureBox4.Size = new System.Drawing.Size(40, 40);
+			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox4.TabIndex = 7;
+			this.pictureBox4.TabStop = false;
+			// 
+			// pictureBox5
+			// 
+			this.pictureBox5.ErrorImage = null;
+			this.pictureBox5.Image = global::PrimitiveTribe1_0.Properties.Resources.rock;
+			this.pictureBox5.InitialImage = null;
+			this.pictureBox5.Location = new System.Drawing.Point(21, 116);
+			this.pictureBox5.Name = "pictureBox5";
+			this.pictureBox5.Size = new System.Drawing.Size(40, 40);
+			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox5.TabIndex = 8;
+			this.pictureBox5.TabStop = false;
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.ErrorImage = null;
+			this.pictureBox1.Image = global::PrimitiveTribe1_0.Properties.Resources.animalskin;
+			this.pictureBox1.InitialImage = null;
+			this.pictureBox1.Location = new System.Drawing.Point(21, 162);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 4;
+			this.pictureBox1.TabStop = false;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1348, 721);
-			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.panel2);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";
@@ -296,13 +566,16 @@
 			this.panel1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.HumanIndexNumericUpDown)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.panel2.ResumeLayout(false);
-			this.panel2.PerformLayout();
-			this.menuStrip1.ResumeLayout(false);
-			this.menuStrip1.PerformLayout();
+			this.resourceGroupBox.ResumeLayout(false);
+			this.resourceGroupBox.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -311,23 +584,42 @@
 
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem aboutMyTribeToolStripMenuItem;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button newDayButton;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Button MakeNewHumanButton;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.Button AppointButton;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Button RefreshInfoTree;
 		private System.Windows.Forms.ComboBox GenderComboBox;
-		private System.Windows.Forms.NumericUpDown HumanIndexNumericUpDown;
 		private System.Windows.Forms.ComboBox ClassComboBox;
 		private System.Windows.Forms.ListView InfoListView;
+		private System.Windows.Forms.ColumnHeader index;
+		private System.Windows.Forms.ColumnHeader name;
+		private System.Windows.Forms.ColumnHeader job;
+		private System.Windows.Forms.ColumnHeader gender;
+		private System.Windows.Forms.ListView CharacteristicsListView;
+		private System.Windows.Forms.ColumnHeader strength;
+		private System.Windows.Forms.ColumnHeader agility;
+		private System.Windows.Forms.ColumnHeader intelligence;
+		private System.Windows.Forms.ColumnHeader luck;
+		private System.Windows.Forms.ColumnHeader efficiency;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.GroupBox resourceGroupBox;
+		private System.Windows.Forms.Label Wood;
+		private System.Windows.Forms.Label Medicines;
+		private System.Windows.Forms.Label AnimalSkin;
+		private System.Windows.Forms.Label Stone;
+		private System.Windows.Forms.Label Food;
+		private System.Windows.Forms.Label WoodIndex;
+		private System.Windows.Forms.Label MedicinesIndex;
+		private System.Windows.Forms.Label AnimalSkinIndex;
+		private System.Windows.Forms.Label StoneIndex;
+		private System.Windows.Forms.Label FoodIndex;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.PictureBox pictureBox5;
+		private System.Windows.Forms.PictureBox pictureBox4;
+		private System.Windows.Forms.PictureBox pictureBox3;
+		private System.Windows.Forms.PictureBox pictureBox2;
 	}
 }
 
