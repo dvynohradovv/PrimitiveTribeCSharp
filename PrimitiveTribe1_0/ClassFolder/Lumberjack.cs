@@ -10,17 +10,18 @@ namespace PrimitiveTribe1_0.ClassFolder
 	{
 		public Lumberjack(Human human) : base(human.Characteristics)
 		{
-			_currJob = JobsEnum.Lumberjack;
+			_rankPriorityLevel = 1;
+			_currJob = JobsEn.Lumberjack;
 		}
 		public override void GoToWork(TribeResources tribeResources)
 		{
 			efficiency = Efficiency();
 			tribeResources.AddResource(new Wood(efficiency));
-			Characteristics.JobsLevelUpdate(JobsEnum.Lumberjack, _daysOnJob);
+			Characteristics.JobsLevelUpdate(JobsEn.Lumberjack, ref _daysOnJob);
 		}
 		protected override int Efficiency()
 		{
-			return Characteristics.CalculateEfficiency(LeaderCharacteristics, JobsEnum.Lumberjack, 0.4, 0.3, 0.2, 0.1);
+			return Characteristics.CalculateEfficiency(LeaderCharacteristics, JobsEn.Lumberjack, 0.4, 0.3, 0.2, 0.1);
 		}
 	}
 }

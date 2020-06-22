@@ -11,7 +11,8 @@ namespace PrimitiveTribe1_0.ClassFolder
 		//конструктор
 		public Leader(Human human) : base(human.Characteristics)
 		{
-			_currJob = JobsEnum.Leader;
+			_rankPriorityLevel = 4;
+			_currJob = JobsEn.Leader;
 		}
 
 		//методы класса
@@ -20,11 +21,11 @@ namespace PrimitiveTribe1_0.ClassFolder
 			efficiency = Efficiency();
 			tribeResources.AddResource(new TribalPrestige(efficiency));
 			Characteristics.IncreaseSomeRandom(1, 1);
-			Characteristics.JobsLevelUpdate(JobsEnum.Leader, _daysOnJob);
+			Characteristics.JobsLevelUpdate(JobsEn.Leader, ref _daysOnJob);
 		}
 		protected override int Efficiency()
 		{
-			return Characteristics.CalculateEfficiency(LeaderCharacteristics, JobsEnum.Leader, 0.3, 0.2, 0.4, 0.1);
+			return Characteristics.CalculateEfficiency(LeaderCharacteristics, JobsEn.Leader, 0.3, 0.2, 0.4, 0.1);
 		}
 	}
 }

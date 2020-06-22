@@ -1,67 +1,71 @@
 ﻿namespace PrimitiveTribe1_0.ClassFolder
 {
+	static class SubjectRecipes 
+	{
+		public static Resource[] MakeHumanRecipe{ get => new Resource[] { new Food(10), new Wood(100), new Stone(100), new AnimalSkin(100), new Medicines(10) }; }
+		public static Resource[] HumanNeedsRecipe{ get => new Resource[] { new Food(5) }; }
+	}
 	abstract class Resource
 	{
-		public Resource(ResourceEnum resourceType)//конструктор по умолчанию
+		//конструкторы
+		public Resource(ResourceEn resourceType)//конструктор по умолчанию
 		{
 			_resourceType = resourceType;
 		}
 
-		public Resource(ResourceEnum resourceType, int quantity)
+		public Resource(ResourceEn resourceType, int quantity)
 		{
 			_resourceType = resourceType;
 			_quantity = quantity;
 		}
-		public ResourceEnum ResourceType { get => _resourceType; }
+
+		//геттеры
+		public ResourceEn ResourceType { get => _resourceType; }
 		public int Quantity { get => _quantity; }
+
+		//методы
 		public void AddTo(int add) { _quantity += add; }
-		public bool UseFrom(int use)
-		{
-			if ((_quantity - use) < 0)
-			{
-				return false;
-			}
-			_quantity -= use;
-			return true;
-		}
+		public void UseHowMuch(int use) { _quantity -= use; } 
+
 		private int _quantity = 0;
-		private ResourceEnum _resourceType;
+		//private int _NotEnoughErrorCount = 0;
+		private ResourceEn _resourceType;
 	}
 
 	class Food : Resource
 	{
-		public Food() : base(ResourceEnum.Food) { } 
+		public Food() : base(ResourceEn.Food) { } 
 
-		public Food(int quantity) : base(ResourceEnum.Food, quantity) 	{ } 
+		public Food(int quantity) : base(ResourceEn.Food, quantity) 	{ } 
 	}
 	class Wood : Resource
 	{
-		public Wood() : base(ResourceEnum.Wood) { }
-		public Wood(int quantity) : base(ResourceEnum.Wood, quantity) { }
+		public Wood() : base(ResourceEn.Wood) { }
+		public Wood(int quantity) : base(ResourceEn.Wood, quantity) { }
 	}
 	class Stone : Resource
 	{
-		public Stone() : base(ResourceEnum.Stone) { }
-		public Stone(int quantity) : base(ResourceEnum.Stone, quantity) { }
+		public Stone() : base(ResourceEn.Stone) { }
+		public Stone(int quantity) : base(ResourceEn.Stone, quantity) { }
 	}
 	class AnimalSkin : Resource
 	{
-		public AnimalSkin() : base(ResourceEnum.AnimalSkin) { }
-		public AnimalSkin(int quantity) : base(ResourceEnum.AnimalSkin, quantity) { }
+		public AnimalSkin() : base(ResourceEn.AnimalSkin) { }
+		public AnimalSkin(int quantity) : base(ResourceEn.AnimalSkin, quantity) { }
 	}
 	class TribalStrength : Resource
 	{
-		public TribalStrength() : base(ResourceEnum.TribalStrength) { }
-		public TribalStrength(int quantity) : base(ResourceEnum.TribalStrength, quantity) { }
+		public TribalStrength() : base(ResourceEn.TribalStrength) { }
+		public TribalStrength(int quantity) : base(ResourceEn.TribalStrength, quantity) { }
 	}
 	class TribalPrestige : Resource
 	{
-		public TribalPrestige() : base(ResourceEnum.TribalPrestige) { }
-		public TribalPrestige(int quantity) : base(ResourceEnum.TribalPrestige, quantity) { }
+		public TribalPrestige() : base(ResourceEn.TribalPrestige) { }
+		public TribalPrestige(int quantity) : base(ResourceEn.TribalPrestige, quantity) { }
 	}
 	class Medicines : Resource 
 	{
-		public Medicines() : base(ResourceEnum.Medicines) { }
-		public Medicines(int quantity) : base(ResourceEnum.Medicines, quantity) { }
+		public Medicines() : base(ResourceEn.Medicines) { }
+		public Medicines(int quantity) : base(ResourceEn.Medicines, quantity) { }
 	}
 }

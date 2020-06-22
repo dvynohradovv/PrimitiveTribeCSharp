@@ -35,43 +35,43 @@ namespace PrimitiveTribe1_0.ClassFolder
 			int list_size = str_list.Count() - 1;
 			return str_list[RandomValue(list_size)];
 		}
-		public static JobsEnum ParseStringToJobsEnum(string currClass)
+		public static JobsEn ParseStringToJobsEnum(string currClass)
 		{
 			switch (currClass)
 			{
 				case "NoClassHuman":
 					{
-						return JobsEnum.NoClassHuman;
+						return JobsEn.NoClassHuman;
 					}
 				case "Leader":
 					{
-						return JobsEnum.Leader;
+						return JobsEn.Leader;
 					}
 				case "Shaman":
 					{
-						return JobsEnum.Shaman;
+						return JobsEn.Shaman;
 					}
 				case "Fisherman":
 					{
-						return JobsEnum.Fisherman;
+						return JobsEn.Fisherman;
 					}
 				case "Collector":
 					{
-						return JobsEnum.Collector;
+						return JobsEn.Collector;
 					}
 				case "Lumberjack":
 					{
-						return JobsEnum.Lumberjack;
+						return JobsEn.Lumberjack;
 					}
 				case "Warrior":
 					{
-						return JobsEnum.Warrior;
+						return JobsEn.Warrior;
 					}
 				case "Hunter":
 					{
-						return JobsEnum.Hunter;
+						return JobsEn.Hunter;
 					}
-				default: return JobsEnum.Leader;
+				default: return JobsEn.Leader;
 			}
 		}
 	}

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PrimitiveTribe1_0.ClassFolder
 {
-	abstract class Human
+	abstract class Human 
 	{
 		//конструкторы
 		public Human (string gender)//Конструктор в случае создания нового человека
@@ -28,8 +28,9 @@ namespace PrimitiveTribe1_0.ClassFolder
 		public int CurrIndex { get => _characteristics.CurrIndex; } 
 		public HumanCharacteristics Characteristics { get => _characteristics; } 
 		public HumanCharacteristics LeaderCharacteristics { get => _leaderCharacteristics; } 
-		public JobsEnum CurrJob { get => _currJob; } 
+		public JobsEn CurrJob { get => _currJob; } 
 		public int efficiency { get => _efficiency; set => _efficiency = value; }
+		public int RankPriorityLevel { get => _rankPriorityLevel; set => _rankPriorityLevel = value; }
 
 		//методы взаимодействия 
 		public abstract void GoToWork(TribeResources tribeResources); 
@@ -39,9 +40,10 @@ namespace PrimitiveTribe1_0.ClassFolder
 		private static int _humansIndex = 0;
 
 		//поля класса, которые меняются при переопределении класса
-		protected JobsEnum _currJob;
-		protected int _daysOnJob = 0;
-		private int _efficiency = 0;
+		protected JobsEn _currJob; 
+		protected int _daysOnJob = 1; 
+		private int _efficiency = 0; 
+		protected int _rankPriorityLevel;
 
 		//объекты класса
 		private HumanCharacteristics _characteristics = new HumanCharacteristics();
@@ -62,7 +64,8 @@ namespace PrimitiveTribe1_0.ClassFolder
 	{
 		public NoClassHuman(string gender) : base (gender) 
 		{
-			_currJob = JobsEnum.NoClassHuman;
+			_rankPriorityLevel = 0;
+			_currJob = JobsEn.NoClassHuman;
 		}
 		protected override int Efficiency()
 		{
@@ -71,5 +74,20 @@ namespace PrimitiveTribe1_0.ClassFolder
 		}
 		public override void GoToWork(TribeResources tribeResources) { }
 		
+	}
+
+	class DiedHuman : Human
+	{
+		public DiedHuman(Human human) : base(human.Characteristics)
+		{
+			_rankPriorityLevel = -1;
+			_currJob = JobsEn.DiedHuman;
+		}
+		protected override int Efficiency()
+		{
+			efficiency = 0;
+			return 0;
+		}
+		public override void GoToWork(TribeResources tribeResources) { }
 	}
 }

@@ -10,18 +10,19 @@ namespace PrimitiveTribe1_0.ClassFolder
 	{
 		public Hunter(Human human) : base(human.Characteristics)
 		{
-			_currJob = JobsEnum.Hunter; 
+			_rankPriorityLevel = 2;
+			_currJob = JobsEn.Hunter; 
 		}
 		public override void GoToWork(TribeResources tribeResources)
 		{
 			efficiency = Efficiency();
 			tribeResources.AddResource(new Food(efficiency/2));
 			tribeResources.AddResource(new AnimalSkin(efficiency/2));
-			Characteristics.JobsLevelUpdate(JobsEnum.Hunter, _daysOnJob);
+			Characteristics.JobsLevelUpdate(JobsEn.Hunter, ref _daysOnJob);
 		}
 		protected override int Efficiency()
 		{
-			return Characteristics.CalculateEfficiency(LeaderCharacteristics, JobsEnum.Hunter, 0.3, 0.3, 0.2, 0.2);
+			return Characteristics.CalculateEfficiency(LeaderCharacteristics, JobsEn.Hunter, 0.3, 0.3, 0.2, 0.2);
 		}
 	}
 }

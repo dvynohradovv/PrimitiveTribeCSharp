@@ -18,22 +18,26 @@ using System.Media;
 
 namespace PrimitiveTribe1_0
 {
-	public enum JobsEnum { NoClassHuman, Leader, Shaman, Fisherman, Collector, Lumberjack, Warrior, Hunter };
-	public enum CharacteristicsEnum { Strength, Agility, Intelligence, Luck };
-	public enum ResourceEnum { Food, Wood, Stone, AnimalSkin, TribalStrength, TribalPrestige, Medicines };
+	public enum JobsEn { NoClassHuman, Leader, Shaman, Fisherman, Collector, Lumberjack, Warrior, Hunter, DiedHuman };
+	public enum CharacteristicsEn { Strength, Agility, Intelligence, Luck };
+	public enum ResourceEn { Food, Wood, Stone, AnimalSkin, TribalStrength, TribalPrestige, Medicines };
+	public enum BuildingEn { LeaderHouse, ShamanHouse, FishingBoat, Warehouse, Sawmill, Barracks, Chopping }
+	public enum State { Built, NotBuilt, BuildNow };
 	public partial class Form1 : Form
 	{
-		
 		public Form1()
 		{
 			InitializeComponent();
+
+			LoadInfoListViewData();
+			LoadResourceInfoListData();
 		}
 
 		private Tribe tribe = new Tribe();
 
 		private string _selectedGender_ = "man";
 		private int _selectedIndex_ = -1;
-		private JobsEnum selectedJob = JobsEnum.Leader;
+		private JobsEn selectedJob = JobsEn.Leader;
 
 		private void GenderComboBox_SelectedIndexChanged(object sender, EventArgs e)//Селектор "выбор гендора"
 		{
@@ -41,9 +45,19 @@ namespace PrimitiveTribe1_0
 		}
 		private void MakeNewHumanButton_Click_1(object sender, EventArgs e)//Кнопка "новый человек"
 		{
-			tribe.MakeNoClassHuman(_selectedGender_);
-			MessageBox.Show("You make a: " + _selectedGender_);
-			LoadInfoListViewData();
+			string message = "";
+			if(tribe.MakeNoClassHuman(_selectedGender_, out message))
+			{
+				LoadInfoListViewData();
+				LoadResourceInfoListData();
+				MessageBox.Show("Поздравляю! В поселении новый житель: " + _selectedGender_);
+			}
+			else
+			{
+				MessageBox.Show("Упс. Что-то пошло не так.\n" + message);
+			}
+			
+			
 		}
 		private void LoadInfoListViewData() //Обновление списка людей
 		{
@@ -55,7 +69,7 @@ namespace PrimitiveTribe1_0
 				InfoListView.Items.Add(oneItem);
 			}
 		}
-		private void LoadResourceInfoListData()
+		private void LoadResourceInfoListData()//Обновление списка ресурсов
 		{
 			string[] str = tribe.GetTribeResourcesData();
 			FoodIndex.Text = str[0];
@@ -76,7 +90,7 @@ namespace PrimitiveTribe1_0
 			else
 			{
 				_selectedIndex_ = -1;
-				string[] str = { "0", "0", "0", "0", "0" };
+				string[] str = { "*", "*", "*", "*", "*" };
 				oneItem = new ListViewItem(str);
 			}
 			CharacteristicsListView.Items.Add(oneItem);
@@ -91,17 +105,17 @@ namespace PrimitiveTribe1_0
 		}
 		private void AppointButton_Click(object sender, EventArgs e)//Кнопка "назначить на должность"
 		{
-			if (tribe.HasHuman(_selectedIndex_))
+			if (_selectedIndex_ != -1) //(tribe.HasHuman(_selectedIndex_))
 			{
-				if(selectedJob == JobsEnum.Leader && tribe.HasSomeClass(selectedJob))
+				if(selectedJob == JobsEn.Leader && tribe.HasSomeClass(selectedJob))
 				{
-					MessageBox.Show("You can't select more then one: " + selectedJob.ToString());
+					MessageBox.Show("Вы не можете назначить больше чем одного человека на должность: " + selectedJob.ToString());
 				}
 				else
 				{
 					DialogResult result = MessageBox.Show(
-						"You appoint a human with index: '" + _selectedIndex_ + "' and with gender: '" + tribe.GetGender(_selectedIndex_) + "' to class: " + selectedJob.ToString(),
-						"Are you shure?",
+						"Вы уверенны, что хотите назначить человека с индексом: '" + _selectedIndex_ + "' и с гендером: '" + tribe.GetGender(_selectedIndex_) + "' на должность: " + selectedJob.ToString(),
+						"Вы уверенны?",
 						MessageBoxButtons.YesNo,
 						MessageBoxIcon.Question,
 						MessageBoxDefaultButton.Button1,
@@ -109,7 +123,7 @@ namespace PrimitiveTribe1_0
 					if (result == DialogResult.Yes)
 					{
 						tribe.AppointTo(_selectedIndex_, selectedJob);
-						MessageBox.Show("Creating was successful");
+						//MessageBox.Show("Creating was successful");
 						LoadInfoListViewData();
 					}
 				}
@@ -117,16 +131,21 @@ namespace PrimitiveTribe1_0
 			else 
 			{
 				//MySound.ERROR.Play();
-				MessageBox.Show("There is no human with index: " + _selectedIndex_);
+				MessageBox.Show("Вы никого не выбрали!");
 			}
 		}
 		private void newDayButton_Click(object sender, EventArgs e)//Кнопка "новый день"
 		{
-			tribe.GoToWork();
+			string message;
+			tribe.StartNewDay(out message);
 			LoadResourceInfoListData();
 			LoadInfoListViewData();
-			MessageBox.Show("New day is starting!");
+			MessageBox.Show("Начался новый день!\n" + message);
 		}
 
+		private void Stone_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

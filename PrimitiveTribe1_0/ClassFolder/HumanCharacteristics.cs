@@ -11,30 +11,30 @@ namespace PrimitiveTribe1_0.ClassFolder
 		//геттеры-сеттеры для характеристик
 		public string Gender { get => _gender; }
 		public int CurrIndex { get => _currIndex; }
-		public int Strength { get => dic_HumanCharacteristics[CharacteristicsEnum.Strength]; private set => dic_HumanCharacteristics[CharacteristicsEnum.Strength] = value; }
-		public int Agility { get => dic_HumanCharacteristics[CharacteristicsEnum.Agility]; private set => dic_HumanCharacteristics[CharacteristicsEnum.Agility] = value; }
-		public int Intelligence { get => dic_HumanCharacteristics[CharacteristicsEnum.Intelligence]; private set => dic_HumanCharacteristics[CharacteristicsEnum.Intelligence] = value; }
-		public int Luck { get => dic_HumanCharacteristics[CharacteristicsEnum.Luck]; private set => dic_HumanCharacteristics[CharacteristicsEnum.Luck] = value; }
+		public int Strength { get => dic_HumanCharacteristics[CharacteristicsEn.Strength]; private set => dic_HumanCharacteristics[CharacteristicsEn.Strength] = value; }
+		public int Agility { get => dic_HumanCharacteristics[CharacteristicsEn.Agility]; private set => dic_HumanCharacteristics[CharacteristicsEn.Agility] = value; }
+		public int Intelligence { get => dic_HumanCharacteristics[CharacteristicsEn.Intelligence]; private set => dic_HumanCharacteristics[CharacteristicsEn.Intelligence] = value; }
+		public int Luck { get => dic_HumanCharacteristics[CharacteristicsEn.Luck]; private set => dic_HumanCharacteristics[CharacteristicsEn.Luck] = value; }
 
 		//конструкторы
 		public HumanCharacteristics()
 		{
-			dic_HumanCharacteristics = new Dictionary<CharacteristicsEnum, int>
+			dic_HumanCharacteristics = new Dictionary<CharacteristicsEn, int>
 			{
-				{CharacteristicsEnum.Strength, 0 },
-				{CharacteristicsEnum.Agility, 0 },
-				{CharacteristicsEnum.Intelligence, 0 },
-				{CharacteristicsEnum.Luck, 0 }
+				{CharacteristicsEn.Strength, 0 },
+				{CharacteristicsEn.Agility, 0 },
+				{CharacteristicsEn.Intelligence, 0 },
+				{CharacteristicsEn.Luck, 0 }
 			};
 		}
 		public HumanCharacteristics(int str, int aglt, int intel, int luck)
 		{
-			dic_HumanCharacteristics = new Dictionary<CharacteristicsEnum, int>
+			dic_HumanCharacteristics = new Dictionary<CharacteristicsEn, int>
 			{
-				{CharacteristicsEnum.Strength, str },
-				{CharacteristicsEnum.Agility, aglt },
-				{CharacteristicsEnum.Intelligence, intel },
-				{CharacteristicsEnum.Luck, luck }
+				{CharacteristicsEn.Strength, str },
+				{CharacteristicsEn.Agility, aglt },
+				{CharacteristicsEn.Intelligence, intel },
+				{CharacteristicsEn.Luck, luck }
 			};
 		}
 		public HumanCharacteristics(string gender, int humansIndex)
@@ -59,15 +59,14 @@ namespace PrimitiveTribe1_0.ClassFolder
 		}
 
 		//методы
-		public int CalculateEfficiency(HumanCharacteristics leader, JobsEnum job, double coefStr, double coefAg, double coefInt, double coefLuc)
+		public int CalculateEfficiency(HumanCharacteristics leader, JobsEn job, double coefStr, double coefAg, double coefInt, double coefLuc)
 		{
 			double strength = (Strength + leader.Strength / 2) * coefStr;
 			double agility = (Agility + leader.Agility / 2) * coefAg;
 			double intelligence = (Intelligence + leader.Intelligence / 2) * coefInt;
 			double luck = (Luck + leader.Luck / 2) * coefLuc; 
-			
 
-			return Convert.ToInt32(Math.Round(strength + agility + intelligence + luck));
+			return Convert.ToInt32(Math.Round(strength + agility + intelligence + luck + humanJobsExp.GetJobsExp(job)));
 		}
 		public void IncreaseToAll(int value)
 		{
@@ -75,10 +74,6 @@ namespace PrimitiveTribe1_0.ClassFolder
 			Agility += value;
 			Intelligence += value;
 			Luck += value;
-			//dic_HumanCharacteristics[CharacteristicsEnum.Strength] += value;
-			//dic_HumanCharacteristics[CharacteristicsEnum.Agility] += value;
-			//dic_HumanCharacteristics[CharacteristicsEnum.Intelligence] += value;
-			//dic_HumanCharacteristics[CharacteristicsEnum.Luck] += value;
 		}
 		public void IncreaseSomeRandom(int howmuch, int value)
 		{
@@ -112,7 +107,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 				howmuch--;
 			}
 		}
-		public void JobsLevelUpdate(JobsEnum job, int daysOnJob)
+		public void JobsLevelUpdate(JobsEn job, ref int daysOnJob)
 		{
 			if (daysOnJob % 7 == 0 && humanJobsExp.GetJobsExp(job) <= 10)
 			{
@@ -130,7 +125,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 
 		//поля класса, которые формирутся один раз для человека и больше не изменяются непосредственным вмешательством 
 		//до конца его сущеествования, только по средствам ивентов
-		private Dictionary<CharacteristicsEnum, int> dic_HumanCharacteristics = new Dictionary<CharacteristicsEnum, int>();
+		private Dictionary<CharacteristicsEn, int> dic_HumanCharacteristics = new Dictionary<CharacteristicsEn, int>();
 		private string _gender;
 		private int _currIndex;
 		
@@ -174,38 +169,40 @@ namespace PrimitiveTribe1_0.ClassFolder
 	{
 		public HumanJobsExp()
 		{
-			dic_jobsExp = new Dictionary<JobsEnum, int>
+			dic_jobsExp = new Dictionary<JobsEn, int>
 			{
-				{JobsEnum.Leader, 0 }, 
-				{JobsEnum.Shaman, 0 },
-				{JobsEnum.Fisherman, 0 },
-				{JobsEnum.Collector, 0 },
-				{JobsEnum.Lumberjack, 0 },
-				{JobsEnum.Warrior, 0 },
-				{JobsEnum.Hunter, 0 }
+				{JobsEn.Leader, 0 }, 
+				{JobsEn.Shaman, 0 },
+				{JobsEn.Fisherman, 0 },
+				{JobsEn.Collector, 0 },
+				{JobsEn.Lumberjack, 0 },
+				{JobsEn.Warrior, 0 },
+				{JobsEn.Hunter, 0 }
 			};
 		}
 
 		//геттеры-сеттеры выполненные методом ENUM
-		public int GetJobsExp(JobsEnum jobs)
+		public int GetJobsExp(JobsEn jobs)
 		{
-			return dic_jobsExp[jobs];
+			if(jobs != JobsEn.NoClassHuman)
+			{
+				return dic_jobsExp[jobs];
+			}
+			else
+			{
+				return 0;
+			}
+			
 		}
 
 		//поля класса
-		public void AddToJobsExp(JobsEnum jobs, int value)
+		public void AddToJobsExp(JobsEn jobs, int value)
 		{
 			dic_jobsExp[jobs] += value;
 		}
-		private Dictionary<JobsEnum, int> dic_jobsExp;
+		private Dictionary<JobsEn, int> dic_jobsExp;
 	}
-
 	class HumanSpecialSkills
-	{
-
-	}
-
-	class HumansNeeds
 	{
 
 	}
