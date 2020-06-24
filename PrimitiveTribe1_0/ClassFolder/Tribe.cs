@@ -16,18 +16,34 @@ namespace PrimitiveTribe1_0.ClassFolder
 		//геттеры для обновления информации в винФорм
 		public List<string[]> GetTribeListViewData()
 		{
-			List<string[]> dataList = new List<string[]>(); 
+			List<string[]> dataList = new List<string[]>();
 			foreach (var it in dic_Human)
 			{
-				dataList.Add (new string[] 
-				{ 
-					Convert.ToString(it.Key), 
-					it.Value.Characteristics.Name.FullName, 
-					it.Value.CurrJob.ToString(), 
-					it.Value.Gender
-				});
+				dataList.Add(GetOneHumanListViewData(it));
 			}
 			return dataList;
+		}
+		public string[] GetOneHumanListViewData(KeyValuePair<int, Human> it)
+		{
+			string[] data = (new string[]
+			{
+				Convert.ToString(it.Key),
+					it.Value.Characteristics.Name.FullName,
+					it.Value.CurrJob.ToString(),
+					it.Value.Gender
+			});
+			return data;
+		}
+		public string[] GetOneHumanListViewData(int index)
+		{
+			string[] data = (new string[]
+			{
+				Convert.ToString(dic_Human[index].CurrIndex),
+					dic_Human[index].Characteristics.Name.FullName,
+					dic_Human[index].CurrJob.ToString(),
+					dic_Human[index].Gender
+			});
+			return data;
 		}
 		public string[] GetHumanCharacteristicListViewData(int index)
 		{
@@ -60,6 +76,21 @@ namespace PrimitiveTribe1_0.ClassFolder
 				Convert.ToString(dataInt[4])
 			});
 			return dataStr;
+		}
+
+		public string[] GetHumanExpData(int index)
+		{
+			string[] humanExpData = (new string[]
+			{
+				dic_Human[index].Characteristics.HumanJobsExp.GetJobsExp(JobsEn.Leader).ToString(),
+				dic_Human[index].Characteristics.HumanJobsExp.GetJobsExp(JobsEn.Shaman).ToString(),
+				dic_Human[index].Characteristics.HumanJobsExp.GetJobsExp(JobsEn.Warrior).ToString(),
+				dic_Human[index].Characteristics.HumanJobsExp.GetJobsExp(JobsEn.Hunter).ToString(),
+				dic_Human[index].Characteristics.HumanJobsExp.GetJobsExp(JobsEn.Collector).ToString(),
+				dic_Human[index].Characteristics.HumanJobsExp.GetJobsExp(JobsEn.Lumberjack).ToString(),
+				dic_Human[index].Characteristics.HumanJobsExp.GetJobsExp(JobsEn.Fisherman).ToString(),
+			});
+			return humanExpData;
 		}
 
 		//методы класса для взаимодействия с классом Human\dic_Human
@@ -155,7 +186,6 @@ namespace PrimitiveTribe1_0.ClassFolder
 			}
 			else
 			{
-				//int diedPeople = 0;
 				List<int> tmp_diedPeople = new List<int>();
 				foreach (KeyValuePair<int, Human> it in dic_Human)
 				{
@@ -169,7 +199,6 @@ namespace PrimitiveTribe1_0.ClassFolder
 					} 
 					else 
 					{
-						//diedPeople++;
 						tmp_diedPeople.Add(GoToDeadHumanByPriorityLevel());
 					} 
 				}
@@ -198,8 +227,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 		private int GoToDeadHumanByPriorityLevel() 
 		{
 			int tmp_rankPriorityLevel = 0;
-			//bool tmp_loop = true;
-			while(tmp_rankPriorityLevel <= 4 /*&& tmp_loop*/) 
+			while(tmp_rankPriorityLevel <= 4) 
 			{
 				foreach (var it in dic_Human)
 				{
@@ -207,8 +235,6 @@ namespace PrimitiveTribe1_0.ClassFolder
 					{
 						it.Value.RankPriorityLevel = -1;
 						dic_DiedHuman.Add(it.Key, new DiedHuman(it.Value));
-						//tmp_loop = false;
-						//break;
 						return it.Key;
 					}
 				}
@@ -216,7 +242,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 			}
 			return -1;
 		}
-		
+
 	}
 	class TribeResources
 	{
@@ -237,8 +263,6 @@ namespace PrimitiveTribe1_0.ClassFolder
 		{
 			dic_tribeResources[resource.ResourceType].UseHowMuch(resource.Quantity);
 		}
-
-
 
 		//методы взаимодействия с МНОЖЕСТВОМ ресурсами
 		public void UseResources(Resource[] weNeedResources)
@@ -265,7 +289,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 			if (tmp_message == "") message = "Успех!"; 
 			message = tmp_message; 
 			return enoughResource; 
-		} 
+		}
 
 		//поле класса
 		private Dictionary<ResourceEn, Resource> dic_tribeResources = new Dictionary<ResourceEn, Resource>()

@@ -81,16 +81,25 @@
     <Compile Include="ClassFolder\Shaman.cs" />
     <Compile Include="ClassFolder\Tribe.cs" />
     <Compile Include="ClassFolder\Warrior.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormsFolder\MainWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormsFolder\MainWindowForm.Designer.cs">
+      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsFolder\OneHumanFullCharacteristicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsFolder\OneHumanFullCharacteristicsForm.Designer.cs">
+      <DependentUpon>OneHumanFullCharacteristicsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormsFolder\MainWindowForm.resx">
+      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsFolder\OneHumanFullCharacteristicsForm.resx">
+      <DependentUpon>OneHumanFullCharacteristicsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -144,10 +153,18 @@
     <None Include="Resources\Фон игры 2.1.png" />
     <None Include="Resources\фон игры 2.0.png" />
     <None Include="Resources\ткань.png" />
+    <None Include="Resources\campfire-clipart-transparent-background-4.png" />
+    <None Include="Resources\260-2609240_camp-firewood-heap-fire-wood-png.png" />
     <Content Include="Resources\food.png" />
+    <None Include="Resources\ManAndWomanTribe.png" />
+    <None Include="Resources\ManAndWomanTribepng.png" />
+    <None Include="Resources\i_007.png" />
     <Content Include="Resources\medicines.png" />
     <Content Include="Resources\rock.png" />
     <None Include="Resources\для димы пиксель.png" />
+    <None Include="Resources\tribeHuman.png" />
+    <None Include="Resources\stone-png-cartoon-1.png" />
+    <None Include="Resources\rust-stone-png-3.png" />
     <Content Include="Resources\wood.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

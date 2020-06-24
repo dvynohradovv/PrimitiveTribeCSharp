@@ -173,11 +173,11 @@ namespace PrimitiveTribe1_0.ClassFolder
 			{
 				{JobsEn.Leader, 0 }, 
 				{JobsEn.Shaman, 0 },
-				{JobsEn.Fisherman, 0 },
+				{JobsEn.Warrior, 0 },
+				{JobsEn.Hunter, 0 },
 				{JobsEn.Collector, 0 },
 				{JobsEn.Lumberjack, 0 },
-				{JobsEn.Warrior, 0 },
-				{JobsEn.Hunter, 0 }
+				{JobsEn.Fisherman, 0 }
 			};
 		}
 
