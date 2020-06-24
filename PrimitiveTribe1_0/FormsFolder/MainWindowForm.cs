@@ -53,12 +53,17 @@ namespace PrimitiveTribe1_0
 		}      
 		private void LoadResourceInfoListData()//Обновление списка ресурсов
 		{
-			string[] str = tribe.GetTribeResourcesData();
-			FoodIndex.Text = str[0];
-			WoodIndex.Text = str[1];
-			StoneIndex.Text = str[2];
-			AnimalSkinIndex.Text = str[3];
-			MedicinesIndex.Text = str[4];
+			string[] tribeResources = tribe.GetTribeResourcesData();
+			FoodIndex.Text = tribeResources[0];
+			WoodIndex.Text = tribeResources[1];
+			StoneIndex.Text = tribeResources[2];
+			AnimalSkinIndex.Text = tribeResources[3];
+			MedicinesIndex.Text = tribeResources[4];
+
+			string[] tribeSpecialInfo = tribe.GetSpecialTribeData();
+			tribeStrengthLabel.Text = tribeSpecialInfo[0];
+			tribePrestigeLabel.Text = tribeSpecialInfo[1];
+			dayLabel.Text = tribeSpecialInfo[2];
 		}    
 		private void InfoListView_SelectedIndexChanged(object sender, EventArgs e) //выбор человека
 		{
@@ -152,6 +157,10 @@ namespace PrimitiveTribe1_0
 			LoadInfoListViewData();
 			MessageBox.Show("Начался новый день!\n" + message);
 		}
-		
+
+		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

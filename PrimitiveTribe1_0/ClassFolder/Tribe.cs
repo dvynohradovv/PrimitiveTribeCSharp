@@ -45,6 +45,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 			});
 			return data;
 		}
+		
 		public string[] GetHumanCharacteristicListViewData(int index)
 		{
 			string[] dataStr = (new string[]
@@ -77,7 +78,6 @@ namespace PrimitiveTribe1_0.ClassFolder
 			});
 			return dataStr;
 		}
-
 		public string[] GetHumanExpData(int index)
 		{
 			string[] humanExpData = (new string[]
@@ -91,6 +91,15 @@ namespace PrimitiveTribe1_0.ClassFolder
 				dic_Human[index].Characteristics.HumanJobsExp.GetJobsExp(JobsEn.Fisherman).ToString(),
 			});
 			return humanExpData;
+		}
+		public string[] GetSpecialTribeData()
+		{
+			string[] data = (new string[] {
+				tribeResources.GetResourceQuantity(ResourceEn.TribalStrength).ToString(),
+				tribeResources.GetResourceQuantity(ResourceEn.TribalPrestige).ToString(),
+				_GlobalDayCounter.ToString()
+			});
+			return data;
 		}
 
 		//методы класса для взаимодействия с классом Human\dic_Human
