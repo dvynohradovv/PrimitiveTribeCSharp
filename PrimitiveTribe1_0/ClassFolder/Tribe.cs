@@ -11,7 +11,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 	class Tribe 
 	{
 		//статические геттеры-методы
-		public static Leader Leader { get => leader; }
+		public Leader Leader { get => leader; }
 
 		//геттеры для обновления информации в винФорм
 		public List<string[]> GetTribeListViewData()
@@ -125,7 +125,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 					gender = MyFunction.RandomValue(new List<string>() { "man", "woman" });
 				}
 				int tmp_newIndex = Human.NewIndex;
-				dic_Human.Add(tmp_newIndex, new NoClassHuman(gender));
+				dic_Human.Add(tmp_newIndex, new NoClassHuman(gender, this));
 				//dic_StarvedToDeathPriority.Add(0, tmp_newIndex);
 				return true;
 			}
@@ -137,10 +137,10 @@ namespace PrimitiveTribe1_0.ClassFolder
 		}
 		public void AppointTo(int index, JobsEn job)
 		{
-			Human human = dic_Human[index];
+			Human human = dic_Human[index];     
 			dic_Human.Remove(index);
-			if (human.CurrJob == JobsEn.Leader) leader = null;
-			switch (job)
+			if (human.CurrJob == JobsEn.Leader) leader = null;//если мы хотим переназначить человека, который является лидером, мы обнуляем лидерство
+			switch (job)  
 			{
 				case JobsEn.Warrior:
 					{
@@ -203,9 +203,9 @@ namespace PrimitiveTribe1_0.ClassFolder
 				foreach (KeyValuePair<int, Human> it in dic_Human)
 				{
 					if (tribeResources.HaveEnoughResources(SubjectRecipes.HumanNeedsRecipe, out string tmp_EnoughResourceMessage))
-					{ 
+					{
 						tribeResources.UseResources(SubjectRecipes.HumanNeedsRecipe);
-					} 
+					}
 					else 
 					{
 						tmp_diedPeople.Add(GoToDeadHumanByPriorityLevel());
@@ -229,14 +229,14 @@ namespace PrimitiveTribe1_0.ClassFolder
 		private SortedDictionary<int, Human> dic_Human = new SortedDictionary<int, Human>();
 		private SortedDictionary<int, Human> dic_DiedHuman = new SortedDictionary<int, Human>();
 		private TribeResources tribeResources = new TribeResources();
-		private static Leader leader = null;
+		private Leader leader = null;
 		int _GlobalDayCounter = 0;
 
 		//private методы
 		private int GoToDeadHumanByPriorityLevel() 
 		{
 			int tmp_rankPriorityLevel = 0;
-			while(tmp_rankPriorityLevel <= 4) 
+			while(tmp_rankPriorityLevel <= 4)     
 			{
 				foreach (var it in dic_Human)
 				{
@@ -285,7 +285,7 @@ namespace PrimitiveTribe1_0.ClassFolder
 		{
 			bool enoughResource = true;
 			string tmp_message = "";
-			foreach (var it in weNeedResources) 
+			foreach (var it in weNeedResources)
 			{
 				if(GetResourceQuantity(it.ResourceType) < it.Quantity)
 				{

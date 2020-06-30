@@ -121,6 +121,9 @@
   <data name="medicines" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medicines.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="258096267f386980f8d9b6586fc07824" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\258096267f386980f8d9b6586fc07824.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="260-2609240_camp-firewood-heap-fire-wood-png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\260-2609240_camp-firewood-heap-fire-wood-png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,8 +154,14 @@
   <data name="ManAndWomanTribepng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ManAndWomanTribepng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="i_007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\i_007.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="stone-png-cartoon-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stone-png-cartoon-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="59-598482_image-result-for-drawing-bamboo-to-frame-a-picture-bamboo-frame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\59-598482_image-result-for-drawing-bamboo-to-frame-a-picture-bamboo-frame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="для димы пиксель" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\для димы пиксель.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,7 +175,7 @@
   <data name="campfire-clipart-transparent-background-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\campfire-clipart-transparent-background-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="i_007" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\i_007.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boho-svg-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boho-svg-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

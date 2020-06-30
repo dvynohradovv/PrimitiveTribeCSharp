@@ -67,6 +67,7 @@
 			this.hunterLabel = new System.Windows.Forms.Label();
 			this.label32 = new System.Windows.Forms.Label();
 			this.warriorLabel = new System.Windows.Forms.Label();
+			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -75,6 +76,7 @@
 			this.tableLayoutPanel2.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
 			this.tableLayoutPanel6.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -209,6 +211,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.pictureBox4);
 			this.groupBox1.Controls.Add(this.pictureBox3);
 			this.groupBox1.Controls.Add(this.pictureBox2);
 			this.groupBox1.Controls.Add(this.tableLayoutPanel2);
@@ -568,6 +571,16 @@
 			this.warriorLabel.TabIndex = 21;
 			this.warriorLabel.Text = "0";
 			// 
+			// pictureBox4
+			// 
+			this.pictureBox4.Image = global::PrimitiveTribe1_0.Properties.Resources.boho_svg_1;
+			this.pictureBox4.Location = new System.Drawing.Point(8, 192);
+			this.pictureBox4.Name = "pictureBox4";
+			this.pictureBox4.Size = new System.Drawing.Size(403, 150);
+			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox4.TabIndex = 4;
+			this.pictureBox4.TabStop = false;
+			// 
 			// pictureBox3
 			// 
 			this.pictureBox3.Image = global::PrimitiveTribe1_0.Properties.Resources._260_2609240_camp_firewood_heap_fire_wood_png;
@@ -625,6 +638,7 @@
 			this.tableLayoutPanel3.PerformLayout();
 			this.tableLayoutPanel6.ResumeLayout(false);
 			this.tableLayoutPanel6.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -676,5 +690,6 @@
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.PictureBox pictureBox3;
+		private System.Windows.Forms.PictureBox pictureBox4;
 	}
 }

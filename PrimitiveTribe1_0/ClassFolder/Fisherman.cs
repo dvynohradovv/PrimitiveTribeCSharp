@@ -15,9 +15,9 @@ namespace PrimitiveTribe1_0.ClassFolder
 			_currJob = JobsEn.Fisherman;
 		}
 		public override void GoToWork(TribeResources tribeResources)
-		{
-			efficiency = Efficiency();
-			tribeResources.AddResource(new Food(efficiency));
+		{ 
+			efficiency = Efficiency(); 
+			tribeResources.AddResource(new Food(efficiency)); 
 			Characteristics.JobsLevelUpdate(JobsEn.Fisherman, ref _daysOnJob);
 		}
 

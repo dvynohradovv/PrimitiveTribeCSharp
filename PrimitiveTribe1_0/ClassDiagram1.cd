@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PrimitiveTribe1_0.Form1" Collapsed="true">
+    <Position X="21.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIFAIhQKQWIAJRAAgECQwaJCiQAEAAAAUWIAJwDBDCA=</HashCode>
+      <FileName>FormsFolder\MainWindowForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.Program" Collapsed="true">
+    <Position X="21.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.backupCode.BackUpCode" Collapsed="true">
+    <Position X="21.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BackUpCode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Collector" Collapsed="true">
+    <Position X="2.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Collector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Fisherman" Collapsed="true">
+    <Position X="2.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Fisherman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Human" Collapsed="true">
+    <Position X="2.75" Y="8.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>gAAACAAICAAAAACACAAAACAgAAAhIACQAAAgAAAAABE=</HashCode>
+      <FileName>ClassFolder\Human.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.NoClassHuman" Collapsed="true">
+    <Position X="4.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Human.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.DiedHuman" Collapsed="true">
+    <Position X="6.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Human.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.HumanCharacteristics">
+    <Position X="16.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAMFAAAAAAAAACBAACBjAVAAABAAAAAAAAACAAAADQ=</HashCode>
+      <FileName>ClassFolder\HumanCharacteristics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Name" Collapsed="true">
+    <Position X="20.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAIIAAAAAAAQAAAAAAACQAAAAAgAAAAA=</HashCode>
+      <FileName>ClassFolder\HumanCharacteristics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.HumanJobsExp" Collapsed="true">
+    <Position X="11" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAgAAAA=</HashCode>
+      <FileName>ClassFolder\HumanCharacteristics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.HumanSpecialSkills" Collapsed="true">
+    <Position X="18.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\HumanCharacteristics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Hunter" Collapsed="true">
+    <Position X="4.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Hunter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Leader" Collapsed="true">
+    <Position X="2.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Leader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Lumberjack" Collapsed="true">
+    <Position X="6.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Lumberjack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.MyFunction" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAgAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\MyFunction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.MySound" Collapsed="true">
+    <Position X="21" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\MySound.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.SubjectRecipes" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>ClassFolder\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Resource" Collapsed="true">
+    <Position X="3.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABgAAAQAAAAAAAAAAAAAQAgAAQAAA=</HashCode>
+      <FileName>ClassFolder\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Food" Collapsed="true">
+    <Position X="1.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Wood" Collapsed="true">
+    <Position X="3.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Stone" Collapsed="true">
+    <Position X="5.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.AnimalSkin" Collapsed="true">
+    <Position X="3.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.TribalStrength" Collapsed="true">
+    <Position X="1.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.TribalPrestige" Collapsed="true">
+    <Position X="3.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Medicines" Collapsed="true">
+    <Position X="5.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Shaman" Collapsed="true">
+    <Position X="4.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Shaman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Tribe" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAIAAAAACAAAAAABCMABEEBAJgAAAACAAAAAgAI=</HashCode>
+      <FileName>ClassFolder\Tribe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.TribeResources" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAQAAAQAAAAAAAAAAAAAAgAAASAAAA=</HashCode>
+      <FileName>ClassFolder\Tribe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.ClassFolder.Warrior" Collapsed="true">
+    <Position X="6.25" Y="12" Width="1.5" />
+    <InheritanceLine Type="PrimitiveTribe1_0.ClassFolder.Human" FixedFromPoint="true">
+      <Path>
+        <Point X="4" Y="9.312" />
+        <Point X="4" Y="9.648" />
+        <Point X="4.352" Y="9.648" />
+        <Point X="4.352" Y="11.846" />
+        <Point X="7" Y="11.846" />
+        <Point X="7" Y="12" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFolder\Warrior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.FormsFolder.OneHumanFullCharacteristicsForm" Collapsed="true">
+    <Position X="21.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>9wAIAhgQECAAApgzAAGAEAACAAEAAAACgCAAAABBkDA=</HashCode>
+      <FileName>FormsFolder\OneHumanFullCharacteristicsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.Properties.Resources" Collapsed="true">
+    <Position X="23.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABIAgABAIAAAAAACAABEABCGRAAgAAiAAACgAACAII=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveTribe1_0.Properties.Settings" Collapsed="true">
+    <Position X="21.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="PrimitiveTribe1_0.JobsEn">
+    <Position X="10.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAIAAAAIAAAAQAAAAAAEAAgEAAAAAAAAAEAAQAAAA=</HashCode>
+      <FileName>FormsFolder\MainWindowForm.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PrimitiveTribe1_0.CharacteristicsEn">
+    <Position X="12.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAABAAABAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>FormsFolder\MainWindowForm.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PrimitiveTribe1_0.ResourceEn">
+    <Position X="14.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAEAAAAAAAAIgAAAAAAAAAAAAAAAEAAAAgAACAA=</HashCode>
+      <FileName>FormsFolder\MainWindowForm.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

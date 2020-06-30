@@ -109,6 +109,7 @@
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Form1.datasource" />
     <None Include="Properties\DataSources\PrimitiveTribe1_0.ClassFolder.Collector.datasource" />
@@ -155,6 +156,9 @@
     <None Include="Resources\ткань.png" />
     <None Include="Resources\campfire-clipart-transparent-background-4.png" />
     <None Include="Resources\260-2609240_camp-firewood-heap-fire-wood-png.png" />
+    <None Include="Resources\59-598482_image-result-for-drawing-bamboo-to-frame-a-picture-bamboo-frame.png" />
+    <None Include="Resources\258096267f386980f8d9b6586fc07824.png" />
+    <None Include="Resources\boho-svg-1.png" />
     <Content Include="Resources\food.png" />
     <None Include="Resources\ManAndWomanTribe.png" />
     <None Include="Resources\ManAndWomanTribepng.png" />

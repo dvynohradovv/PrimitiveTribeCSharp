@@ -30,6 +30,13 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.dayLabel = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.tribePrestigeLabel = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.tribeStrengthLabel = new System.Windows.Forms.Label();
 			this.pictureBox6 = new System.Windows.Forms.PictureBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.CharacteristicsListView = new System.Windows.Forms.ListView();
@@ -69,14 +76,8 @@
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.MedicinesIndex = new System.Windows.Forms.Label();
 			this.pictureBox7 = new System.Windows.Forms.PictureBox();
-			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.tribeStrengthLabel = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.tribePrestigeLabel = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.dayLabel = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
+			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
 			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -88,7 +89,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-			this.groupBox3.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -108,6 +108,96 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(521, 721);
 			this.panel1.TabIndex = 0;
+			// 
+			// groupBox3
+			// 
+			this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+			this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.groupBox3.Controls.Add(this.dayLabel);
+			this.groupBox3.Controls.Add(this.label7);
+			this.groupBox3.Controls.Add(this.label5);
+			this.groupBox3.Controls.Add(this.tribePrestigeLabel);
+			this.groupBox3.Controls.Add(this.label1);
+			this.groupBox3.Controls.Add(this.tribeStrengthLabel);
+			this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.groupBox3.Location = new System.Drawing.Point(4, 545);
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.groupBox3.Size = new System.Drawing.Size(308, 173);
+			this.groupBox3.TabIndex = 8;
+			this.groupBox3.TabStop = false;
+			this.groupBox3.Text = "Специальные данные";
+			// 
+			// dayLabel
+			// 
+			this.dayLabel.AutoSize = true;
+			this.dayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.dayLabel.Location = new System.Drawing.Point(77, 119);
+			this.dayLabel.Name = "dayLabel";
+			this.dayLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.dayLabel.Size = new System.Drawing.Size(18, 20);
+			this.dayLabel.TabIndex = 11;
+			this.dayLabel.Text = "0";
+			this.dayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(4, 115);
+			this.label7.Name = "label7";
+			this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.label7.Size = new System.Drawing.Size(67, 25);
+			this.label7.TabIndex = 10;
+			this.label7.Text = "День:";
+			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(4, 42);
+			this.label5.Name = "label5";
+			this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.label5.Size = new System.Drawing.Size(153, 25);
+			this.label5.TabIndex = 8;
+			this.label5.Text = "Сила племени:";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// tribePrestigeLabel
+			// 
+			this.tribePrestigeLabel.AutoSize = true;
+			this.tribePrestigeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.tribePrestigeLabel.Location = new System.Drawing.Point(195, 80);
+			this.tribePrestigeLabel.Name = "tribePrestigeLabel";
+			this.tribePrestigeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.tribePrestigeLabel.Size = new System.Drawing.Size(18, 20);
+			this.tribePrestigeLabel.TabIndex = 9;
+			this.tribePrestigeLabel.Text = "0";
+			this.tribePrestigeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(4, 76);
+			this.label1.Name = "label1";
+			this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.label1.Size = new System.Drawing.Size(193, 25);
+			this.label1.TabIndex = 6;
+			this.label1.Text = "Престиж племени:";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// tribeStrengthLabel
+			// 
+			this.tribeStrengthLabel.AutoSize = true;
+			this.tribeStrengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.tribeStrengthLabel.Location = new System.Drawing.Point(163, 46);
+			this.tribeStrengthLabel.Name = "tribeStrengthLabel";
+			this.tribeStrengthLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.tribeStrengthLabel.Size = new System.Drawing.Size(18, 20);
+			this.tribeStrengthLabel.TabIndex = 7;
+			this.tribeStrengthLabel.Text = "0";
+			this.tribeStrengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// pictureBox6
 			// 
@@ -611,97 +701,6 @@
 			this.pictureBox7.TabIndex = 7;
 			this.pictureBox7.TabStop = false;
 			// 
-			// groupBox3
-			// 
-			this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(115)))), ((int)(((byte)(106)))));
-			this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.groupBox3.Controls.Add(this.dayLabel);
-			this.groupBox3.Controls.Add(this.label7);
-			this.groupBox3.Controls.Add(this.label5);
-			this.groupBox3.Controls.Add(this.tribePrestigeLabel);
-			this.groupBox3.Controls.Add(this.label1);
-			this.groupBox3.Controls.Add(this.tribeStrengthLabel);
-			this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.groupBox3.Location = new System.Drawing.Point(4, 541);
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.groupBox3.Size = new System.Drawing.Size(308, 177);
-			this.groupBox3.TabIndex = 8;
-			this.groupBox3.TabStop = false;
-			this.groupBox3.Text = "Специальные данные";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(4, 76);
-			this.label1.Name = "label1";
-			this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.label1.Size = new System.Drawing.Size(193, 25);
-			this.label1.TabIndex = 6;
-			this.label1.Text = "Престиж племени:";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// tribeStrengthLabel
-			// 
-			this.tribeStrengthLabel.AutoSize = true;
-			this.tribeStrengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tribeStrengthLabel.Location = new System.Drawing.Point(163, 46);
-			this.tribeStrengthLabel.Name = "tribeStrengthLabel";
-			this.tribeStrengthLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.tribeStrengthLabel.Size = new System.Drawing.Size(18, 20);
-			this.tribeStrengthLabel.TabIndex = 7;
-			this.tribeStrengthLabel.Text = "0";
-			this.tribeStrengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.tribeStrengthLabel.Click += new System.EventHandler(this.label2_Click);
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(4, 42);
-			this.label5.Name = "label5";
-			this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.label5.Size = new System.Drawing.Size(153, 25);
-			this.label5.TabIndex = 8;
-			this.label5.Text = "Сила племени:";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// tribePrestigeLabel
-			// 
-			this.tribePrestigeLabel.AutoSize = true;
-			this.tribePrestigeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tribePrestigeLabel.Location = new System.Drawing.Point(195, 80);
-			this.tribePrestigeLabel.Name = "tribePrestigeLabel";
-			this.tribePrestigeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.tribePrestigeLabel.Size = new System.Drawing.Size(18, 20);
-			this.tribePrestigeLabel.TabIndex = 9;
-			this.tribePrestigeLabel.Text = "0";
-			this.tribePrestigeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(4, 115);
-			this.label7.Name = "label7";
-			this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.label7.Size = new System.Drawing.Size(67, 25);
-			this.label7.TabIndex = 10;
-			this.label7.Text = "День:";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// dayLabel
-			// 
-			this.dayLabel.AutoSize = true;
-			this.dayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.dayLabel.Location = new System.Drawing.Point(77, 120);
-			this.dayLabel.Name = "dayLabel";
-			this.dayLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.dayLabel.Size = new System.Drawing.Size(18, 20);
-			this.dayLabel.TabIndex = 11;
-			this.dayLabel.Text = "0";
-			this.dayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -716,6 +715,8 @@
 			this.Text = "Human Tribe ";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			this.groupBox3.ResumeLayout(false);
+			this.groupBox3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
@@ -730,8 +731,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-			this.groupBox3.ResumeLayout(false);
-			this.groupBox3.PerformLayout();
 			this.ResumeLayout(false);
 
 		}

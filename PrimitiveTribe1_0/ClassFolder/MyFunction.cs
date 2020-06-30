@@ -12,15 +12,15 @@ namespace PrimitiveTribe1_0.ClassFolder
 		public static int RandomValue()
 		{
 			return rnd.Next();
-		}
-		public static int RandomValue(int to)//с нуля включительно
+		} // 1
+		public static int RandomValue(int to)//2 с нуля включительно
 		{
 			return rnd.Next(to+1);
 		}
 		public static int RandomValue(int from, int to)
 		{
 			return rnd.Next(from, to + 1);
-		}
+		} // 3
 		public static int RandomValue(int from, int to, int repeat)
 		{
 			int[] Values = new int[repeat];
@@ -29,12 +29,12 @@ namespace PrimitiveTribe1_0.ClassFolder
 				Values[i] = MyFunction.RandomValue(from, to);
 			}
 			return Values.Max();
-		}
+		} // 4
 		public static string RandomValue(List<string> str_list)
 		{
 			int list_size = str_list.Count() - 1;
 			return str_list[RandomValue(list_size)];
-		}
+		} // 5
 		public static JobsEn ParseStringToJobsEnum(string currClass)
 		{
 			switch (currClass)

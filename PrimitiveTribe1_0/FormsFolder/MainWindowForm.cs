@@ -22,8 +22,8 @@ namespace PrimitiveTribe1_0
 	public enum JobsEn { NoClassHuman, Leader, Shaman, Warrior, Hunter, Collector, Lumberjack, Fisherman, DiedHuman };
 	public enum CharacteristicsEn { Strength, Agility, Intelligence, Luck };
 	public enum ResourceEn { Food, Wood, Stone, AnimalSkin, TribalStrength, TribalPrestige, Medicines };
-	public enum BuildingEn { LeaderHouse, ShamanHouse, FishingBoat, Warehouse, Sawmill, Barracks, Chopping }
-	public enum State { Built, NotBuilt, BuildNow };
+	//public enum BuildingEn { LeaderHouse, ShamanHouse, FishingBoat, Warehouse, Sawmill, Barracks, Chopping }
+	//public enum State { Built, NotBuilt, BuildNow };
 	public partial class Form1 : Form
 	{
 		public Form1()
@@ -43,7 +43,7 @@ namespace PrimitiveTribe1_0
 		//списки, информация в них и вызов информации по штучно   
 		private void LoadInfoListViewData() //Обновление списка людей
 		{
-			InfoListView.Items.Clear(); 
+			InfoListView.Items.Clear();
 			foreach (var it in tribe.GetTribeListViewData()) 
 			{
 				ListViewItem oneItem = new ListViewItem(it); 
@@ -156,11 +156,6 @@ namespace PrimitiveTribe1_0
 			LoadResourceInfoListData();
 			LoadInfoListViewData();
 			MessageBox.Show("Начался новый день!\n" + message);
-		}
-
-		private void label2_Click(object sender, EventArgs e)
-		{
-
 		}
 	}
 }

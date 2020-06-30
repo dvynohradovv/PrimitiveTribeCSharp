@@ -2,7 +2,7 @@
 {
 	static class SubjectRecipes 
 	{
-		public static Resource[] MakeHumanRecipe{ get => new Resource[] { new Food(10), new Wood(100), new Stone(100), new AnimalSkin(100), new Medicines(10) }; }
+		public static Resource[] MakeHumanRecipe{ get => new Resource[] { new Food(10), new Wood(100), new Stone(100), new AnimalSkin(100), new Medicines(10) }; } 
 		public static Resource[] HumanNeedsRecipe{ get => new Resource[] { new Food(5) }; }
 	}
 	abstract class Resource
